@@ -177,10 +177,11 @@ server {
 ## 👤 Author
 
 **Tito Kilonzo Kinyambu**  
-Back-End Developer · Cybersecurity Analyst · ICT Consultant 
+Back-End Developer · Cybersecurity Analyst · ICT Consultant  
+📍 Nairobi, Kenya  
 🔗 [github.com/TitoKilonzo](https://github.com/TitoKilonzo) · [linkedin.com/in/titokinyambu](https://linkedin.com/in/titokinyambu)  
 ✉️ titokilonzo3@gmail.com
 
 ---
 
-© 2025 Tito Kilonzo Kinyambu
+© 2025 Tito Kilonzo Kinyambu.

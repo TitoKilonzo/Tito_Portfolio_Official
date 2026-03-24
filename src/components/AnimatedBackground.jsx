@@ -1,43 +1,34 @@
 import { useEffect, useRef, memo } from 'react'
-import { motion } from 'framer-motion'
-
-/**
- * AnimatedBackground
- * - Full-viewport photo background with Ken Burns animation (slow zoom/pan)
- * - Per-page canvas overlay (particles, waves, matrix, hexagons, orbits, neural)
- * - Dark scrim for readability
- */
 
 const BG_CONFIG = {
-  home:     { src: '/backgrounds/bg-home.jpg',     ken: 'zoom-out',  overlay: 'rgba(3,7,18,0.72)',   canvasAlpha: 0.55 },
-  about:    { src: '/backgrounds/bg-about.jpg',    ken: 'pan-right', overlay: 'rgba(3,7,18,0.78)',   canvasAlpha: 0.4  },
-  projects: { src: '/backgrounds/bg-projects.jpg', ken: 'pan-left',  overlay: 'rgba(3,7,18,0.75)',   canvasAlpha: 0.45 },
-  blog:     { src: '/backgrounds/bg-blog.jpg',     ken: 'zoom-in',   overlay: 'rgba(3,7,18,0.70)',   canvasAlpha: 0.5  },
-  services: { src: '/backgrounds/bg-services.jpg', ken: 'pan-up',    overlay: 'rgba(3,7,18,0.76)',   canvasAlpha: 0.42 },
-  contact:  { src: '/backgrounds/bg-contact.jpg',  ken: 'zoom-out',  overlay: 'rgba(3,7,18,0.68)',   canvasAlpha: 0.5  },
+  home:     { src: '/backgrounds/bg-home.jpg',     ken: 'zoom-out',  },
+  about:    { src: '/backgrounds/bg-about.jpg',    ken: 'pan-right', },
+  projects: { src: '/backgrounds/bg-projects.jpg', ken: 'pan-left',  },
+  blog:     { src: '/backgrounds/bg-blog.jpg',     ken: 'zoom-in',   },
+  services: { src: '/backgrounds/bg-services.jpg', ken: 'pan-up',    },
+  contact:  { src: '/backgrounds/bg-contact.jpg',  ken: 'zoom-out',  },
 }
 
-/* Ken Burns keyframes injected once */
 const KB_STYLES = `
-@keyframes kb-zoom-in  { from{transform:scale(1)   translateX(0)   translateY(0)}   to{transform:scale(1.18) translateX(-2%) translateY(-1%)} }
-@keyframes kb-zoom-out { from{transform:scale(1.18) translateX(-2%) translateY(-1%)} to{transform:scale(1)   translateX(0)   translateY(0)}   }
-@keyframes kb-pan-right{ from{transform:scale(1.12) translateX(-4%) translateY(0)}   to{transform:scale(1.12) translateX(2%)  translateY(1%)} }
-@keyframes kb-pan-left { from{transform:scale(1.12) translateX(2%)  translateY(1%)}  to{transform:scale(1.12) translateX(-4%) translateY(0)}  }
-@keyframes kb-pan-up   { from{transform:scale(1.12) translateX(0)   translateY(3%)}  to{transform:scale(1.12) translateX(1%)  translateY(-2%)} }
+@keyframes kb-zoom-in   { from{transform:scale(1)    translateX(0)    translateY(0)   } to{transform:scale(1.12) translateX(-1%) translateY(-1%)} }
+@keyframes kb-zoom-out  { from{transform:scale(1.12) translateX(-1%)  translateY(-1%) } to{transform:scale(1)    translateX(0)    translateY(0)  } }
+@keyframes kb-pan-right { from{transform:scale(1.1)  translateX(-3%)  translateY(0)   } to{transform:scale(1.1)  translateX(1%)   translateY(1%) } }
+@keyframes kb-pan-left  { from{transform:scale(1.1)  translateX(1%)   translateY(1%)  } to{transform:scale(1.1)  translateX(-3%)  translateY(0)  } }
+@keyframes kb-pan-up    { from{transform:scale(1.1)  translateX(0)    translateY(2%)  } to{transform:scale(1.1)  translateX(0%)   translateY(-2%)} }
 `
 if (typeof document !== 'undefined' && !document.getElementById('kb-styles')) {
   const s = document.createElement('style')
-  s.id = 'kb-styles'
-  s.textContent = KB_STYLES
+  s.id = 'kb-styles'; s.textContent = KB_STYLES
   document.head.appendChild(s)
 }
 
-function useCanvasAnimation(canvasRef, variant, alpha) {
+function useCanvas(canvasRef, variant) {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     let raf
+    let state = {}
 
     function resize() {
       canvas.width  = window.innerWidth
@@ -45,42 +36,37 @@ function useCanvasAnimation(canvasRef, variant, alpha) {
       init()
     }
 
-    /* ── State ─────────────────────────────── */
-    let state = {}
-
     function init() {
       const W = canvas.width, H = canvas.height
       if (variant === 'home') {
-        state = { particles: Array.from({ length: 70 }, () => ({
+        state = { ps: Array.from({ length: 55 }, () => ({
           x: Math.random()*W, y: Math.random()*H,
-          vx: (Math.random()-0.5)*0.4, vy: (Math.random()-0.5)*0.4,
-          r: Math.random()*1.6+0.5, a: Math.random()*0.55+0.15,
+          vx:(Math.random()-.5)*.35, vy:(Math.random()-.5)*.35,
+          r: Math.random()*1.4+.4, a: Math.random()*.35+.12,
         }))}
       } else if (variant === 'about') {
         state = { t: 0 }
       } else if (variant === 'projects') {
-        const cols = Math.floor(W/20)
-        state = { cols, drops: Array(cols).fill(0).map(()=>Math.random()*H/20),
-          chars: '01アウカキコサシ{}[]<>/;PYTHON' }
+        const cols = Math.floor(W/22)
+        state = { cols, drops: Array(cols).fill(0).map(()=>Math.random()*H/22),
+          chars: '01{}[]アキサPY' }
       } else if (variant === 'blog') {
-        state = { hexes: Array.from({ length: 14 }, () => ({
-          x:Math.random()*W, y:Math.random()*H,
-          size:Math.random()*45+18, vx:(Math.random()-0.5)*0.18, vy:(Math.random()-0.5)*0.18,
-          rot:Math.random()*Math.PI*2, vRot:(Math.random()-0.5)*0.004,
-          a:Math.random()*0.1+0.04,
-          c:['rgba(255,120,30,','rgba(255,60,130,','rgba(180,60,255,'][Math.floor(Math.random()*3)],
+        state = { hexes: Array.from({ length: 10 }, () => ({
+          x:Math.random()*W, y:Math.random()*H, size:Math.random()*40+16,
+          vx:(Math.random()-.5)*.15, vy:(Math.random()-.5)*.15,
+          rot:Math.random()*Math.PI*2, vRot:(Math.random()-.5)*.003,
+          a:.06, c:['rgba(255,120,30,','rgba(56,210,247,','rgba(168,85,247,'][Math.floor(Math.random()*3)],
         }))}
       } else if (variant === 'services') {
         state = { t:0, rings:[
-          { r:140, speed:0.0007, dots:5,  c:'rgba(0,255,136,' },
-          { r:240, speed:0.0005, dots:8,  c:'rgba(56,210,247,' },
-          { r:340, speed:0.0003, dots:10, c:'rgba(168,85,247,' },
-          { r:440, speed:0.0002, dots:12, c:'rgba(245,158,11,' },
+          {r:130,speed:.0006,dots:5, c:'rgba(0,255,136,'},
+          {r:220,speed:.0004,dots:7, c:'rgba(56,210,247,'},
+          {r:320,speed:.0003,dots:10,c:'rgba(168,85,247,'},
         ]}
       } else if (variant === 'contact') {
-        state = { nodes: Array.from({ length: 28 }, () => ({
+        state = { nodes: Array.from({ length: 22 }, () => ({
           x:Math.random()*W, y:Math.random()*H,
-          vx:(Math.random()-0.5)*0.28, vy:(Math.random()-0.5)*0.28,
+          vx:(Math.random()-.5)*.25, vy:(Math.random()-.5)*.25,
           pulse:Math.random()*Math.PI*2,
         }))}
       }
@@ -88,11 +74,10 @@ function useCanvasAnimation(canvasRef, variant, alpha) {
 
     function draw() {
       const W = canvas.width, H = canvas.height
-      ctx.globalAlpha = alpha
 
       if (variant === 'home') {
         ctx.clearRect(0,0,W,H)
-        const { particles: ps } = state
+        const { ps } = state
         ps.forEach(p => {
           p.x+=p.vx; p.y+=p.vy
           if(p.x<0)p.x=W; if(p.x>W)p.x=0
@@ -102,35 +87,35 @@ function useCanvasAnimation(canvasRef, variant, alpha) {
         })
         for(let i=0;i<ps.length;i++) for(let j=i+1;j<ps.length;j++){
           const dx=ps[i].x-ps[j].x, dy=ps[i].y-ps[j].y, d=Math.sqrt(dx*dx+dy*dy)
-          if(d<130){ ctx.beginPath(); ctx.moveTo(ps[i].x,ps[i].y); ctx.lineTo(ps[j].x,ps[j].y)
-            ctx.strokeStyle=`rgba(0,255,136,${0.13*(1-d/130)})`; ctx.lineWidth=0.6; ctx.stroke() }
+          if(d<110){
+            ctx.beginPath(); ctx.moveTo(ps[i].x,ps[i].y); ctx.lineTo(ps[j].x,ps[j].y)
+            ctx.strokeStyle=`rgba(0,255,136,${.1*(1-d/110)})`
+            ctx.lineWidth=.5; ctx.stroke()
+          }
         }
 
       } else if (variant === 'about') {
-        state.t+=0.007
-        ctx.clearRect(0,0,W,H)
-        ;[
-          { amp:55, freq:0.004, speed:1,   c:'rgba(56,210,247,', phase:0 },
-          { amp:38, freq:0.006, speed:1.3, c:'rgba(168,85,247,', phase:2 },
-          { amp:45, freq:0.003, speed:0.7, c:'rgba(0,255,136,',  phase:4 },
+        state.t+=.006; ctx.clearRect(0,0,W,H)
+        ;[{amp:50,freq:.004,speed:1,c:'rgba(56,210,247,',ph:0},
+          {amp:34,freq:.006,speed:1.3,c:'rgba(168,85,247,',ph:2},
+          {amp:42,freq:.003,speed:.7,c:'rgba(0,255,136,',ph:4}
         ].forEach(w=>{
           ctx.beginPath()
           for(let x=0;x<=W;x+=4){
-            const y=H*0.5+Math.sin(x*w.freq+state.t*w.speed+w.phase)*w.amp
+            const y=H*.5+Math.sin(x*w.freq+state.t*w.speed+w.ph)*w.amp
             x===0?ctx.moveTo(x,y):ctx.lineTo(x,y)
           }
-          ctx.strokeStyle=w.c+'0.2)'; ctx.lineWidth=1.5; ctx.stroke()
+          ctx.strokeStyle=w.c+'.15)'; ctx.lineWidth=1.4; ctx.stroke()
         })
 
       } else if (variant === 'projects') {
-        ctx.fillStyle=`rgba(3,7,18,0.05)`; ctx.fillRect(0,0,W,H)
-        ctx.fillStyle='rgba(0,255,136,0.22)'; ctx.font='13px JetBrains Mono,monospace'
+        ctx.fillStyle='rgba(3,7,18,.04)'; ctx.fillRect(0,0,W,H)
+        ctx.fillStyle='rgba(0,255,136,.18)'; ctx.font='12px JetBrains Mono,monospace'
         const { cols, drops, chars } = state
         for(let i=0;i<cols;i++){
-          const ch=chars[Math.floor(Math.random()*chars.length)]
-          ctx.fillText(ch, i*20, drops[i]*20)
-          if(drops[i]*20>H && Math.random()>0.975) drops[i]=0
-          drops[i]+=0.5
+          ctx.fillText(chars[Math.floor(Math.random()*chars.length)], i*22, drops[i]*22)
+          if(drops[i]*22>H && Math.random()>.975) drops[i]=0
+          drops[i]+=.45
         }
 
       } else if (variant === 'blog') {
@@ -145,45 +130,44 @@ function useCanvasAnimation(canvasRef, variant, alpha) {
             i===0?ctx.moveTo(h.x+h.size*Math.cos(a),h.y+h.size*Math.sin(a))
                  :ctx.lineTo(h.x+h.size*Math.cos(a),h.y+h.size*Math.sin(a))
           }
-          ctx.closePath(); ctx.strokeStyle=h.c+h.a+')'; ctx.lineWidth=1; ctx.stroke()
+          ctx.closePath(); ctx.strokeStyle=h.c+h.a+')'; ctx.lineWidth=.9; ctx.stroke()
         })
 
       } else if (variant === 'services') {
-        state.t+=1
-        ctx.clearRect(0,0,W,H)
-        const cx=W*0.5, cy=H*0.5
-        state.rings.forEach(ring=>{
-          ctx.beginPath(); ctx.arc(cx,cy,ring.r,0,Math.PI*2)
-          ctx.strokeStyle=ring.c+'0.14)'; ctx.lineWidth=0.6; ctx.stroke()
-          for(let i=0;i<ring.dots;i++){
-            const a=state.t*ring.speed+(Math.PI*2/ring.dots)*i
-            const dx=cx+ring.r*Math.cos(a), dy=cy+ring.r*Math.sin(a)
-            ctx.beginPath(); ctx.arc(dx,dy,2.5,0,Math.PI*2)
-            ctx.fillStyle=ring.c+'0.6)'; ctx.fill()
+        state.t+=1; ctx.clearRect(0,0,W,H)
+        const cx=W*.5, cy=H*.5
+        state.rings.forEach(r=>{
+          ctx.beginPath(); ctx.arc(cx,cy,r.r,0,Math.PI*2)
+          ctx.strokeStyle=r.c+'.12)'; ctx.lineWidth=.5; ctx.stroke()
+          for(let i=0;i<r.dots;i++){
+            const a=state.t*r.speed+(Math.PI*2/r.dots)*i
+            ctx.beginPath(); ctx.arc(cx+r.r*Math.cos(a),cy+r.r*Math.sin(a),2,0,Math.PI*2)
+            ctx.fillStyle=r.c+'.55)'; ctx.fill()
           }
         })
 
       } else if (variant === 'contact') {
         ctx.clearRect(0,0,W,H)
         state.nodes.forEach(n=>{
-          n.x+=n.vx; n.y+=n.vy; n.pulse+=0.028
+          n.x+=n.vx; n.y+=n.vy; n.pulse+=.025
           if(n.x<0||n.x>W)n.vx*=-1; if(n.y<0||n.y>H)n.vy*=-1
         })
         for(let i=0;i<state.nodes.length;i++){
           for(let j=i+1;j<state.nodes.length;j++){
             const dx=state.nodes[i].x-state.nodes[j].x, dy=state.nodes[i].y-state.nodes[j].y
             const d=Math.sqrt(dx*dx+dy*dy)
-            if(d<150){ ctx.beginPath(); ctx.moveTo(state.nodes[i].x,state.nodes[i].y)
+            if(d<140){
+              ctx.beginPath(); ctx.moveTo(state.nodes[i].x,state.nodes[i].y)
               ctx.lineTo(state.nodes[j].x,state.nodes[j].y)
-              ctx.strokeStyle=`rgba(56,210,247,${0.18*(1-d/150)})`; ctx.lineWidth=0.8; ctx.stroke() }
+              ctx.strokeStyle=`rgba(56,210,247,${.14*(1-d/140)})`; ctx.lineWidth=.7; ctx.stroke()
+            }
           }
-          const pulse=(Math.sin(state.nodes[i].pulse)+1)/2
-          ctx.beginPath(); ctx.arc(state.nodes[i].x,state.nodes[i].y,2+pulse*2,0,Math.PI*2)
-          ctx.fillStyle=`rgba(56,210,247,${0.35+pulse*0.4})`; ctx.fill()
+          const p=(Math.sin(state.nodes[i].pulse)+1)/2
+          ctx.beginPath(); ctx.arc(state.nodes[i].x,state.nodes[i].y,1.8+p*1.8,0,Math.PI*2)
+          ctx.fillStyle=`rgba(56,210,247,${.3+p*.35})`; ctx.fill()
         }
       }
 
-      ctx.globalAlpha = 1
       raf = requestAnimationFrame(draw)
     }
 
@@ -191,50 +175,63 @@ function useCanvasAnimation(canvasRef, variant, alpha) {
     raf = requestAnimationFrame(draw)
     window.addEventListener('resize', resize)
     return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize) }
-  }, [variant, alpha])
+  }, [variant])
 }
 
 function AnimatedBackground({ variant = 'home' }) {
   const canvasRef = useRef(null)
   const cfg = BG_CONFIG[variant] || BG_CONFIG.home
-  useCanvasAnimation(canvasRef, variant, cfg.canvasAlpha)
+
+  useCanvas(canvasRef, variant)
 
   return (
-    <div style={{
-      position: 'fixed', inset: 0, zIndex: 0, pointerEvents: 'none',
-      overflow: 'hidden',
-    }}>
-      {/* ── Photo layer with Ken Burns ──────────────────────────── */}
+    <div style={{ position:'fixed', inset:0, zIndex:0, pointerEvents:'none', overflow:'hidden' }}>
+
+      {/* 1 — Photo with Ken Burns */}
       <div style={{
-        position: 'absolute', inset: '-10%',      // over-size so Ken Burns never shows edges
-        backgroundImage: `url(${cfg.src})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        animation: `kb-${cfg.ken} 22s ease-in-out infinite alternate`,
-        willChange: 'transform',
+        position:'absolute', inset:'-10%',
+        backgroundImage:`url(${cfg.src})`,
+        backgroundSize:'cover',
+        backgroundPosition:'center',
+        animation:`kb-${cfg.ken} 24s ease-in-out infinite alternate`,
+        willChange:'transform',
       }} />
 
-      {/* ── Dark scrim (gradient from bottom for text legibility) ── */}
+      {/* 2 — Heavy dark base scrim — this is the key fix */}
       <div style={{
-        position: 'absolute', inset: 0,
-        background: [
-          cfg.overlay,
-          'linear-gradient(to bottom, rgba(3,7,18,0.15) 0%, rgba(3,7,18,0.55) 60%, rgba(3,7,18,0.92) 100%)',
-        ].join(', '),
-        mixBlendMode: 'normal',
+        position:'absolute', inset:0,
+        background:'rgba(3,7,18,0.82)',
       }} />
 
-      {/* ── Radial vignette ─────────────────────────────────────── */}
+      {/* 3 — Bottom gradient: content areas get extra darkening */}
       <div style={{
-        position: 'absolute', inset: 0,
-        background: 'radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(3,7,18,0.55) 100%)',
+        position:'absolute', inset:0,
+        background:'linear-gradient(to bottom, rgba(3,7,18,0.5) 0%, rgba(3,7,18,0.75) 50%, rgba(3,7,18,0.95) 100%)',
       }} />
 
-      {/* ── Canvas overlay (animated particles/waves/etc) ───────── */}
+      {/* 4 — Edge vignette */}
+      <div style={{
+        position:'absolute', inset:0,
+        background:'radial-gradient(ellipse 90% 80% at 50% 40%, transparent 30%, rgba(3,7,18,0.6) 100%)',
+      }} />
+
+      {/* 5 — Subtle photo bleed through — visible but never overpowering */}
+      <div style={{
+        position:'absolute', inset:'-10%',
+        backgroundImage:`url(${cfg.src})`,
+        backgroundSize:'cover',
+        backgroundPosition:'center',
+        animation:`kb-${cfg.ken} 24s ease-in-out infinite alternate`,
+        willChange:'transform',
+        opacity:0.06,
+        mixBlendMode:'luminosity',
+      }} />
+
+      {/* 6 — Canvas particles/waves (subtle) */}
       <canvas ref={canvasRef} style={{
-        position: 'absolute', inset: 0,
-        width: '100%', height: '100%',
-        mixBlendMode: 'screen',
+        position:'absolute', inset:0,
+        width:'100%', height:'100%',
+        opacity:0.7,
       }} />
     </div>
   )
