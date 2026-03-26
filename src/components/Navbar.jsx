@@ -26,6 +26,19 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => { setOpen(false) }, [location.pathname])
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden'
+      document.body.style.touchAction = 'none'
+    } else {
+      document.body.style.overflow = ''
+      document.body.style.touchAction = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+      document.body.style.touchAction = ''
+    }
+  }, [open])
 
   return (
     <>
@@ -48,6 +61,7 @@ export default function Navbar() {
           backdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'blur(0px)',
           WebkitBackdropFilter: scrolled ? 'blur(24px) saturate(180%)' : 'blur(0px)',
           transition: 'all 0.45s cubic-bezier(0.4,0,0.2,1)',
+          willChange: 'backdrop-filter, background',
         }} />
 
         {/* Bottom border gradient — only when scrolled */}

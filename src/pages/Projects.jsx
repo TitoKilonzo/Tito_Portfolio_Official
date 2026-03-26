@@ -13,7 +13,37 @@ const PAGE = {
 
 const LANG_COLORS = {
   Python: '#3776ab', JavaScript: '#f1e05a', TypeScript: '#3178c6',
-  HTML: '#e34c26', CSS: '#563d7c', Shell: '#89e051', Kotlin: '#7f52ff', Dart: '#00b4ab',
+  HTML: '#e34c26', CSS: '#563d7c', Shell: '#89e051', Kotlin: '#7f52ff',
+  Dart: '#00b4ab', PHP: '#4F5D95', Java: '#b07219',
+}
+
+const FALLBACK_DESCRIPTIONS = {
+  'Precision-Flow-Architecture-Premium-Plumbing-Website': 'A premium, responsive plumbing website built using the Architectural Fluidity Principle. Features glassmorphism and smooth scroll animations.',
+  'Crop-Recommendation-System': 'An intelligent system that recommends the best crops to grow based on soil and environmental data using machine learning.',
+  'root_app_clean_architecture_': 'A Flutter mobile application following Clean Architecture principles for high maintainability and scalability.',
+  'FreshBasket': 'A modern e-commerce platform for fresh produce, featuring a clean UI and seamless user experience.',
+  'Bongotoons': 'An interactive platform for digital animations and cartoons, optimized for smooth performance and high-quality rendering.',
+  'vehicle-breakdown': 'A comprehensive management system for vehicle breakdown services, tracking service requests and technician locations.',
+  'FraudShield-MLOps-Pipeline': 'An automated MLOps pipeline for fraud detection, incorporating data validation, model training, and continuous deployment.',
+  'Windows-Fix-Commands': 'A curated collection of essential Windows command-line tools and scripts for troubleshooting and system maintenance.',
+  'aws-cheatsheet': 'A comprehensive guide and reference for AWS services, architectural best practices, and common CLI commands.',
+  'FinTech-NexVault': 'A secure financial technology platform focusing on asset management and high-integrity transaction processing.',
+  'Tito_Portfolio_Official': 'The official portfolio website of Tito Kilonzo, showcasing expertise in back-end development and cybersecurity.',
+  'Eco_Alert': 'An environmental monitoring system that alerts users to ecological changes and potential hazards in real-time.',
+  'LUMINARY-Financial-Wellness-Library': 'A comprehensive React component library designed for high-performance financial wellness dashboards and tools.',
+  'backend-roadmap': 'A detailed learning path and resource collection for mastering back-end development technologies and architectures.',
+  'CyberScribe': 'A comprehensive cybersecurity skills library for AI coding agents, providing structured data for DFIR, threat hunting, malware analysis, and more.',
+  'nexus-trading-simulator': 'A high-fidelity trading simulator for practicing market strategies with real-time data and advanced analytics.',
+  'gmail-sentinel': 'A security-focused Gmail extension that monitors for suspicious activity and protects against phishing attempts.',
+}
+
+const FALLBACK_LANGUAGES = {
+  'Windows-Fix-Commands': 'Shell',
+  'aws-cheatsheet': 'Markdown',
+  'vehicle-breakdown': 'PHP',
+  'backend-roadmap': 'Markdown',
+  'gmail-sentinel': 'JavaScript',
+  'nexus-trading-simulator': 'Python',
 }
 
 function LangDot({ lang }) {
@@ -151,7 +181,7 @@ export default function Projects() {
 
                       <p style={{ color: 'var(--text-muted)', fontSize: '0.82rem', lineHeight: 1.6,
                         flex: 1, marginBottom: 16 }}>
-                        {repo.description || 'No description provided.'}
+                        {repo.description || FALLBACK_DESCRIPTIONS[repo.name] || FALLBACK_DESCRIPTIONS[repo.name.replace(/ /g, '-')] || 'No description provided.'}
                       </p>
 
                       {/* Topics */}
@@ -166,7 +196,10 @@ export default function Projects() {
                       {/* Footer */}
                       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                         paddingTop: 12, borderTop: '1px solid var(--border)' }}>
-                        {repo.language ? <LangDot lang={repo.language} /> : <span />}
+                        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                          <span style={{ fontSize: '0.62rem', color: 'var(--text-faint)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Stack:</span>
+                          {(repo.language || FALLBACK_LANGUAGES[repo.name]) ? <LangDot lang={repo.language || FALLBACK_LANGUAGES[repo.name]} /> : <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--text-faint)' }}>Not Specified</span>}
+                        </div>
                         <div style={{ display: 'flex', gap: 12 }}>
                           <span style={{ display: 'flex', alignItems: 'center', gap: 4,
                             fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: 'var(--text-muted)' }}>
