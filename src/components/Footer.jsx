@@ -3,12 +3,13 @@ import { Github, Linkedin, Mail, Terminal } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 const LINKS = [
-  { to:'/',         label:'Home'     },
-  { to:'/about',    label:'About'    },
-  { to:'/projects', label:'Projects' },
-  { to:'/blog',     label:'Blog'     },
-  { to:'/services', label:'Services' },
-  { to:'/contact',  label:'Contact'  },
+  { to:'/',             label:'Home'         },
+  { to:'/about',        label:'About'        },
+  { to:'/projects',     label:'Projects'     },
+  { to:'/blog',         label:'Blog'         },
+  { to:'/services',     label:'Services'     },
+  { to:'/testimonials', label:'Testimonials' },
+  { to:'/contact',      label:'Contact'      },
 ]
 
 const SOCIALS = [

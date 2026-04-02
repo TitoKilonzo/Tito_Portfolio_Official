@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import { ArrowRight, Github, Shield, Server, Code2, Wifi, Download } from 'lucide-react'
 import WaveCard from '../components/WaveCard'
 import AnimatedBackground from '../components/AnimatedBackground'
+import MagneticButton from '../components/MagneticButton'
 import useResponsive from '../hooks/useResponsive'
 
 const PAGE = {
@@ -137,13 +138,19 @@ export default function Home() {
 
               <motion.div initial={{ opacity:0, y:8 }} animate={{ opacity:1, y:0 }}
                 transition={{ delay:0.5 }} className="cta-row">
-                <NavLink to="/projects" className="btn-primary">
-                  <Code2 size={14} /> View Projects <ArrowRight size={13} />
-                </NavLink>
-                <NavLink to="/contact" className="btn-outline">Get In Touch</NavLink>
-                <a href="/cv/TITO_KILONZO_KINYAMBU-CV.pdf" download className="btn-outline">
-                  <Download size={13} /> CV
-                </a>
+                <MagneticButton>
+                  <NavLink to="/projects" className="btn-primary">
+                    <Code2 size={14} /> View Projects <ArrowRight size={13} />
+                  </NavLink>
+                </MagneticButton>
+                <MagneticButton>
+                  <NavLink to="/contact" className="btn-outline">Get In Touch</NavLink>
+                </MagneticButton>
+                <MagneticButton>
+                  <a href="/cv/TITO_KILONZO_KINYAMBU-CV.pdf" download className="btn-outline">
+                    <Download size={13} /> CV
+                  </a>
+                </MagneticButton>
               </motion.div>
             </div>
 

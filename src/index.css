@@ -51,6 +51,48 @@
   --text-4xl:  clamp(2.6rem,  7vw,   4.5rem);
 }
 
+/* ── Light theme overrides ──────────────────────────────────────────── */
+[data-theme="light"] {
+  --bg-primary:    #f0f4f8;
+  --bg-secondary:  #e2eaf2;
+  --bg-tertiary:   #d8e3ee;
+  --bg-card:       rgba(255, 255, 255, 0.72);
+  --primary:       #00a854;
+  --primary-dim:   rgba(0, 168, 84, 0.10);
+  --primary-glow:  rgba(0, 168, 84, 0.30);
+  --secondary:     #0284a8;
+  --secondary-dim: rgba(2, 132, 168, 0.10);
+  --accent:        #7c3aed;
+  --accent-dim:    rgba(124, 58, 237, 0.10);
+  --text:          #0f172a;
+  --text-muted:    #475569;
+  --text-faint:    #94a3b8;
+  --border:        rgba(15, 23, 42, 0.10);
+  --border-hover:  rgba(0, 168, 84, 0.35);
+  --glass:         rgba(255, 255, 255, 0.55);
+  --shadow-card:   0 4px 24px rgba(15, 23, 42, 0.10);
+  --shadow-glow:   0 0 40px var(--primary-glow);
+  color-scheme: light;
+}
+
+[data-theme="light"] body {
+  background: var(--bg-primary);
+  color: var(--text);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(0, 168, 84, 0.30);
+}
+
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+[data-theme="light"] ::selection {
+  background: var(--primary-dim);
+  color: var(--primary);
+}
+
 /* ── Reset ──────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; touch-action: manipulation; }

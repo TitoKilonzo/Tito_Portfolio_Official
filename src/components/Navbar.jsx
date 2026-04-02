@@ -2,14 +2,17 @@ import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { ThemeToggle } from './ThemeToggle'
+import MagneticButton from './MagneticButton'
 
 const LINKS = [
-  { to: '/',         label: 'Home'     },
-  { to: '/about',    label: 'About'    },
-  { to: '/projects', label: 'Projects' },
-  { to: '/blog',     label: 'Blog'     },
-  { to: '/services', label: 'Services' },
-  { to: '/contact',  label: 'Contact'  },
+  { to: '/',             label: 'Home'         },
+  { to: '/about',        label: 'About'        },
+  { to: '/projects',     label: 'Projects'     },
+  { to: '/blog',         label: 'Blog'         },
+  { to: '/services',     label: 'Services'     },
+  { to: '/testimonials', label: 'Testimonials' },
+  { to: '/contact',      label: 'Contact'      },
 ]
 
 export default function Navbar() {
@@ -176,21 +179,24 @@ export default function Navbar() {
 
           {/* ── CTA + Hamburger ──────────────────────────────── */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <NavLink to="/contact" className="nav-cta"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: 7,
-                padding: '9px 20px', borderRadius: 99,
-                background: 'var(--primary)',
-                color: '#000',
-                fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.78rem',
-                letterSpacing: '0.06em',
-                transition: 'box-shadow 0.25s, transform 0.25s',
-              }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 24px rgba(0,255,136,0.5)'; e.currentTarget.style.transform = 'translateY(-1px)' }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none'; e.currentTarget.style.transform = 'none' }}
-            >
-              Hire Me
-            </NavLink>
+            <ThemeToggle />
+            <MagneticButton className="nav-cta-wrap">
+              <NavLink to="/contact"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: 7,
+                  padding: '9px 20px', borderRadius: 99,
+                  background: 'var(--primary)',
+                  color: '#000',
+                  fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.78rem',
+                  letterSpacing: '0.06em',
+                  transition: 'box-shadow 0.25s',
+                }}
+                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 24px rgba(0,255,136,0.5)' }}
+                onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none' }}
+              >
+                Hire Me
+              </NavLink>
+            </MagneticButton>
 
             <motion.button
               className="hamburger"
@@ -302,12 +308,12 @@ export default function Navbar() {
         @media(min-width:900px){
           .desktop-nav { display:flex !important; }
           .hamburger   { display:none  !important; }
-          .nav-cta     { display:inline-flex !important; }
+          .nav-cta-wrap { display:inline-flex !important; }
         }
         @media(max-width:899px){
-          .desktop-nav { display:none  !important; }
-          .nav-cta     { display:none  !important; }
-          .hamburger   { display:flex  !important; }
+          .desktop-nav  { display:none  !important; }
+          .nav-cta-wrap { display:none  !important; }
+          .hamburger    { display:flex  !important; }
         }
       `}</style>
     </>

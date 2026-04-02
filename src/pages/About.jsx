@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronDown, Download, Briefcase, GraduationCap, Award, User } from 'lucide-react'
 import WaveCard from '../components/WaveCard'
 import AnimatedBackground from '../components/AnimatedBackground'
+import BentoSkills from '../components/BentoSkills'
 
 const PAGE = {
   initial: { opacity: 0 },
@@ -201,23 +202,11 @@ export default function About() {
         </div>
       </section>
 
-      {/* Tech Stack */}
+      {/* Tech Stack — Bento Grid */}
       <section className="section" style={{ background:'rgba(8,15,26,0.65)', backdropFilter:'blur(20px)',
         borderTop:'1px solid var(--border)', borderBottom:'1px solid var(--border)', position:'relative', zIndex:1 }}>
         <div className="container">
-          <motion.div initial={{ opacity:0, y:14 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}
-            style={{ marginBottom:'clamp(20px,3vw,32px)' }}>
-            <span className="section-tag">Tech Stack</span>
-            <h2 className="section-title">Tools & Technologies</h2>
-          </motion.div>
-          <div style={{ display:'flex', flexDirection:'column', gap:9 }}>
-            {TECH_STACK.map((item, i) => (
-              <motion.div key={item.cat} initial={{ opacity:0, y:8 }}
-                whileInView={{ opacity:1, y:0 }} transition={{ delay:i*0.05 }} viewport={{ once:true }}>
-                <Accordion item={item} />
-              </motion.div>
-            ))}
-          </div>
+          <BentoSkills />
         </div>
       </section>
 
