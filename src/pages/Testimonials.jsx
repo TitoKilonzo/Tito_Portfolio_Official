@@ -2,22 +2,6 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import AnimatedBackground from '../components/AnimatedBackground'
 
-/**
- * Testimonials — referees and quotes aligned to Tito's actual CV:
- *
- * Employers on record:
- *  1. MemeyAI Group           — Back-End Developer Intern (Feb 2026 – Present)
- *  2. AIC Kanzinwa CDC        — ICT Assistant & Software Developer (May 2025 – Jan 2026)
- *  3. Hatikvah Comm. & Eng.   — IT Support & Consultant (Feb – May 2025)
- *  4. Kabarak University      — BSc IT, graduated Dec 2025
- *
- * Stats sourced directly from CV bullet points — do not change without updating CV:
- *  • 1,000+ concurrent users  (MemeyAI production APIs)
- *  • 30+ staff trained        (AIC Kanzinwa CDC)
- *  • 4+ regional sites        (Hatikvah FTTH/FTTB deployments)
- *  • 99.9% uptime             (MemeyAI production APIs)
- */
-
 const TESTIMONIALS = [
   {
     name: 'Anthony Wai',
