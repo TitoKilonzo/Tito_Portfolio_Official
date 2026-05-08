@@ -5,7 +5,7 @@ const SKILLS = [
   {
     cat: 'Languages',
     icon: '{ }',
-    color: '#00ff88',
+    color: '#ff8c42',
     items: ['Python', 'JavaScript', 'TypeScript', 'SQL', 'Bash', 'HTML5', 'CSS3'],
     span: 1,
     desc: 'Core syntax I actually enjoy typing at 2am',
@@ -13,7 +13,7 @@ const SKILLS = [
   {
     cat: 'Frameworks & Libraries',
     icon: '⚙',
-    color: '#38d2f7',
+    color: '#ff6b35',
     items: ['Django', 'React', 'Node.js', 'Express.js', 'FastAPI', 'Framer Motion', 'Pandas'],
     span: 2,
     desc: 'The scaffolding that turns caffeine into shipped product',
@@ -21,7 +21,7 @@ const SKILLS = [
   {
     cat: 'Databases & Storage',
     icon: '🗄',
-    color: '#a855f7',
+    color: '#ffb347',
     items: ['PostgreSQL', 'MongoDB Atlas', 'Supabase', 'Appwrite', 'Redis', 'Firebase'],
     span: 1,
     desc: 'Where the data lives (hopefully backed up)',
@@ -29,7 +29,7 @@ const SKILLS = [
   {
     cat: 'Cybersecurity',
     icon: '🔐',
-    color: '#f59e0b',
+    color: '#ff8c42',
     items: ['Vulnerability Assessment', 'Penetration Testing', 'SIEM', 'OWASP', 'Active Directory', 'Network Hardening'],
     span: 1,
     desc: 'Breaking things responsibly so the bad guys don\'t',
@@ -37,7 +37,7 @@ const SKILLS = [
   {
     cat: 'Networking & Infra',
     icon: '📡',
-    color: '#ef4444',
+    color: '#ffa03b',
     items: ['Fiber Optic (FTTH/FTTB)', 'OTDR Testing', 'TCP/IP', 'DNS/DHCP', 'VPN', 'Cisco'],
     span: 1,
     desc: 'Pulling cable and then writing code about it',

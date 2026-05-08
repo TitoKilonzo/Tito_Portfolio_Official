@@ -12,12 +12,12 @@ const PAGE = {
 }
 
 const TECH_STACK = [
-  { cat:'Languages',                 color:'#00ff88', items:['Python','JavaScript','TypeScript','SQL','Bash','HTML5','CSS3','Java (Android)'] },
-  { cat:'Frameworks & Libraries',    color:'#38d2f7', items:['Django','React','Node.js','Express.js','Vite','Framer Motion','Pandas','Scikit-learn'] },
-  { cat:'Databases & Storage',       color:'#a855f7', items:['PostgreSQL','MySQL','SQLite','MongoDB Atlas','Supabase','Appwrite','Firebase','Redis'] },
-  { cat:'Cybersecurity',             color:'#f59e0b', items:['Vulnerability Assessment','Penetration Testing','SIEM','Incident Response','Active Directory','Network Hardening','OWASP'] },
-  { cat:'Networking & Infra',        color:'#ef4444', items:['Fiber Optic (FTTH/FTTB)','OTDR Testing','Fusion Splicing','ONT Config','TCP/IP','DNS/DHCP','VPN','Cisco'] },
-  { cat:'Tools & DevOps',            color:'#22d3ee', items:['Git','GitHub Actions','CI/CD','Docker','Linux','VS Code','Postman','Figma'] },
+  { cat:'Languages',                 color:'#ff8c42', items:['Python','JavaScript','TypeScript','SQL','Bash','HTML5','CSS3','Java (Android)'] },
+  { cat:'Frameworks & Libraries',    color:'#ff6b35', items:['Django','React','Node.js','Express.js','Vite','Framer Motion','Pandas','Scikit-learn'] },
+  { cat:'Databases & Storage',       color:'#ffb347', items:['PostgreSQL','MySQL','SQLite','MongoDB Atlas','Supabase','Appwrite','Firebase','Redis'] },
+  { cat:'Cybersecurity',             color:'#ff8c42', items:['Vulnerability Assessment','Penetration Testing','SIEM','Incident Response','Active Directory','Network Hardening','OWASP'] },
+  { cat:'Networking & Infra',        color:'#ffa03b', items:['Fiber Optic (FTTH/FTTB)','OTDR Testing','Fusion Splicing','ONT Config','TCP/IP','DNS/DHCP','VPN','Cisco'] },
+  { cat:'Tools & DevOps',            color:'#ff7f32', items:['Git','GitHub Actions','CI/CD','Docker','Linux','VS Code','Postman','Figma'] },
 ]
 
 const EXPERIENCE = [

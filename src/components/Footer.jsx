@@ -30,11 +30,11 @@ export default function Footer() {
               <div style={{ width:34, height:34, borderRadius:8, position:'relative',
                 display:'flex', alignItems:'center', justifyContent:'center' }}>
                 <div style={{ position:'absolute', inset:0, borderRadius:8,
-                  background:'conic-gradient(from var(--angle,0deg),#00ff88,#38d2f7,#a855f7,#00ff88)',
+                  background:'conic-gradient(from var(--angle,0deg),#ff8c42,#ff6b35,#ffffff,#ff8c42)',
                   animation:'conic-spin 4s linear infinite' }} />
                 <div style={{ position:'absolute', inset:2, borderRadius:6, background:'#0d1a2d',
                   display:'flex', alignItems:'center', justifyContent:'center',
-                  fontFamily:'var(--font-mono)', fontWeight:700, fontSize:11, color:'#00ff88' }}>TK</div>
+                  fontFamily:'var(--font-mono)', fontWeight:700, fontSize:11, color:'#ff8c42' }}>TK</div>
               </div>
               <div>
                 <div style={{ fontFamily:'var(--font-display)', fontWeight:800, fontSize:'0.95rem',

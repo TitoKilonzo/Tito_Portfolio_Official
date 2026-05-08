@@ -97,14 +97,14 @@ export default function Navbar() {
             >
               <div style={{
                 position: 'absolute', inset: 0, borderRadius: 10,
-                background: 'conic-gradient(from var(--angle,0deg),#00ff88,#38d2f7,#a855f7,#00ff88)',
+                background: 'conic-gradient(from var(--angle,0deg),#ff8c42,#ff6b35,#ffffff,#ff8c42)',
                 animation: 'conic-spin 4s linear infinite',
               }} />
               <div style={{
                 position: 'absolute', inset: 2, borderRadius: 8,
                 background: '#0d1a2d',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 13, color: '#00ff88',
+                fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: 13, color: '#ff8c42',
               }}>TK</div>
             </motion.div>
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>

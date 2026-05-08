@@ -109,7 +109,7 @@ export default function Preloader({ onDone }) {
                 style={{
                   position: 'absolute', inset: -3,
                   borderRadius: 20,
-                  background: 'conic-gradient(from 0deg, #00ff88, #38d2f7, #a855f7, #00ff88)',
+                  background: 'conic-gradient(from 0deg, #ff8c42, #ff6b35, #ffffff, #ff8c42)',
                   filter: 'blur(2px)',
                 }}
               />
@@ -121,7 +121,7 @@ export default function Preloader({ onDone }) {
               }}>
                 <span style={{
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontWeight: 800, fontSize: 28, color: '#00ff88',
+                  fontWeight: 800, fontSize: 28, color: '#ff8c42',
                   letterSpacing: '-0.02em',
                 }}>TK</span>
               </div>
