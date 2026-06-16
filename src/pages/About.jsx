@@ -24,17 +24,17 @@ const EXPERIENCE = [
   {
     role:'Back-End Developer (Intern)', company:'Current Employer', period:'Feb 2026 – Present',
     highlights:['Developed scalable RESTful APIs serving 1,000+ concurrent users','Reduced DB response time ~35% via indexing & query refactoring','Integrated 5+ payment gateways with zero-downtime deployments'],
-    icon:Briefcase, color:'#00ff88',
+    icon:Briefcase, color:'#ff8c42',
   },
   {
     role:'ICT Assistant & Trainer', company:'AIC Kanzinwa CDC', period:'May 2025 – Jan 2026',
     highlights:['Delivered ICT training to 30+ staff; reduced help-desk tickets ~25%','Provided L1/L2 support across 50+ endpoints at 90%+ SLA','Administered Active Directory and security patches across 60+ devices'],
-    icon:User, color:'#38d2f7',
+    icon:User, color:'#ffffff',
   },
   {
     role:'IT Support & Consultant', company:'Hatikvah Communication & Engineering', period:'Feb 2025 – May 2025',
     highlights:['Led fiber optic FTTH/FTTB deployments across 4+ regional sites','Configured ONTs for 100+ customer premises with OTDR testing','Delivered network security hardening and infrastructure optimization'],
-    icon:Briefcase, color:'#a855f7',
+    icon:Briefcase, color:'#ffb347',
   },
   {
     role:'IT Support (Volunteer)', company:'AIC Kanzinwa Child & Youth Dev.', period:'Aug 2023 – Jan 2024',
@@ -118,7 +118,7 @@ function FlipCard() {
             ) : (
               <>
                 <div style={{ width:40, height:40, borderRadius:'50%',
-                  background:'conic-gradient(from var(--angle,0deg),#00ff88,#38d2f7,#a855f7,#00ff88)',
+                  background:'conic-gradient(from var(--angle,0deg),#ff8c42,#ffffff,#ffb347,#ff8c42)',
                   animation:'conic-spin 4s linear infinite',
                   display:'flex', alignItems:'center', justifyContent:'center' }}>
                   <User size={18} color="#000" />

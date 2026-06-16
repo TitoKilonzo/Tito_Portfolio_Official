@@ -13,7 +13,7 @@ const PAGE = {
 const SOCIALS = [
   { href:'https://github.com/TitoKilonzo',       icon:Github,   label:'GitHub',   handle:'@TitoKilonzo',          color:'#f0f6fc' },
   { href:'https://linkedin.com/in/titokinyambu', icon:Linkedin, label:'LinkedIn', handle:'titokinyambu',          color:'#0a66c2' },
-  { href:'mailto:titokilonzo3@gmail.com',        icon:Mail,     label:'Email',    handle:'titokilonzo3@gmail.com', color:'#00ff88' },
+  { href:'mailto:titokilonzo3@gmail.com',        icon:Mail,     label:'Email',    handle:'titokilonzo3@gmail.com', color:'#ff8c42' },
 ]
 
 const CONTACT_INFO = [
@@ -252,7 +252,7 @@ export default function Contact() {
                           whileHover={{ scale: status==='sending'?1:1.01 }}
                           whileTap={{ scale: status==='sending'?1:0.98 }}
                           style={{ width:'100%', padding:'clamp(11px,2vw,13px) 20px',
-                            background: status==='sending' ? 'rgba(0,255,136,0.3)' : 'var(--primary)',
+                            background: status==='sending' ? 'rgba(255,140,66,0.3)' : 'var(--primary)',
                             color:'#000', border:'none', borderRadius:99,
                             fontFamily:'var(--font-mono)', fontWeight:700, fontSize:'var(--text-sm)',
                             letterSpacing:'0.06em', textTransform:'uppercase',

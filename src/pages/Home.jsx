@@ -90,11 +90,11 @@ export default function Home() {
         {/* Ambient orbs */}
         <div style={{ position:'absolute', top:'10%', left:'-5%', width:'clamp(200px,40vw,500px)',
           height:'clamp(200px,40vw,500px)', pointerEvents:'none',
-          background:'radial-gradient(circle, rgba(0,255,136,0.08) 0%, transparent 70%)',
+          background:'radial-gradient(circle, rgba(255,140,66,0.08) 0%, transparent 70%)',
           animation:'float 9s ease-in-out infinite' }} />
         <div style={{ position:'absolute', bottom:'5%', right:'-5%', width:'clamp(160px,30vw,380px)',
           height:'clamp(160px,30vw,380px)', pointerEvents:'none',
-          background:'radial-gradient(circle, rgba(168,85,247,0.07) 0%, transparent 70%)',
+          background:'radial-gradient(circle, rgba(255,179,71,0.07) 0%, transparent 70%)',
           animation:'float 11s ease-in-out infinite reverse' }} />
 
         <div className="container">
@@ -115,7 +115,7 @@ export default function Home() {
                 style={{ fontSize:'var(--text-4xl)', fontWeight:800, lineHeight:1.1, margin:'14px 0 18px' }}>
                 <span style={{ display:'block', color:'var(--text)' }}>Hi, I'm</span>
                 <span style={{ display:'block',
-                  background:'linear-gradient(135deg,#00ff88 0%,#38d2f7 50%,#a855f7 100%)',
+                  background:'linear-gradient(135deg,#ff8c42 0%,#ffffff 50%,#ffb347 100%)',
                   WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
                   Tito Kilonzo
                 </span>
@@ -199,7 +199,7 @@ export default function Home() {
                 style={{ textAlign:'center', padding:'14px 8px' }}>
                 <Icon size={16} color="var(--primary)" style={{ margin:'0 auto 7px' }} />
                 <div style={{ fontFamily:'var(--font-display)', fontWeight:800, fontSize:'var(--text-2xl)',
-                  background:'linear-gradient(135deg,#00ff88,#38d2f7)',
+                  background:'linear-gradient(135deg,#ff8c42,#ffffff)',
                   WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>{value}</div>
                 <div style={{ color:'var(--text-muted)', fontSize:'var(--text-xs)',
                   fontFamily:'var(--font-mono)', letterSpacing:'0.05em',
@@ -233,7 +233,7 @@ export default function Home() {
                     <div className="glass" style={{ padding:'clamp(18px,3vw,26px)',
                       borderRadius:'var(--radius)', border:'1px solid var(--border)',
                       height:'100%', transition:'var(--transition)', cursor:'pointer' }}
-                      onMouseEnter={e => { e.currentTarget.style.borderColor='var(--border-hover)'; e.currentTarget.style.background='rgba(0,255,136,0.04)' }}
+                      onMouseEnter={e => { e.currentTarget.style.borderColor='var(--border-hover)'; e.currentTarget.style.background='rgba(255,140,66,0.04)' }}
                       onMouseLeave={e => { e.currentTarget.style.borderColor='var(--border)'; e.currentTarget.style.background='' }}>
                       <Icon size={24} color="var(--primary)" style={{ marginBottom:12 }} />
                       <h3 style={{ fontFamily:'var(--font-display)', fontWeight:700,

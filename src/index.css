@@ -51,47 +51,8 @@
   --text-4xl:  clamp(2.6rem,  7vw,   4.5rem);
 }
 
-/* ── Light theme overrides ──────────────────────────────────────────── */
-[data-theme="light"] {
-  --bg-primary:    #fafafa;
-  --bg-secondary:  #f5f5f5;
-  --bg-tertiary:   #efefef;
-  --bg-card:       rgba(255, 255, 255, 0.80);
-  --primary:       #ff7f32;
-  --primary-dim:   rgba(255, 127, 50, 0.12);
-  --primary-glow:  rgba(255, 127, 50, 0.30);
-  --secondary:     #1a1a1a;
-  --secondary-dim: rgba(26, 26, 26, 0.10);
-  --accent:        #ff5722;
-  --accent-dim:    rgba(255, 87, 34, 0.12);
-  --text:          #1a1a1a;
-  --text-muted:    #555555;
-  --text-faint:    #999999;
-  --border:        rgba(0, 0, 0, 0.08);
-  --border-hover:  rgba(255, 127, 50, 0.35);
-  --glass:         rgba(255, 255, 255, 0.60);
-  --shadow-card:   0 4px 24px rgba(0, 0, 0, 0.08);
-  --shadow-glow:   0 0 40px var(--primary-glow);
-  color-scheme: light;
-}
 
-[data-theme="light"] body {
-  background: var(--bg-primary);
-  color: var(--text);
-}
 
-[data-theme="light"] ::-webkit-scrollbar-thumb {
-  background: rgba(255, 127, 50, 0.35);
-}
-
-[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
-
-[data-theme="light"] ::selection {
-  background: var(--primary-dim);
-  color: var(--primary);
-}
 
 /* ── Reset ──────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }

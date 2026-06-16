@@ -65,13 +65,13 @@ export default function Preloader({ onDone }) {
           <div style={{
             position: 'absolute', top: '-10%', left: '-10%',
             width: '50vw', height: '50vw',
-            background: 'radial-gradient(circle, rgba(0,255,136,0.06) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(255,140,66,0.06) 0%, transparent 65%)',
             pointerEvents: 'none',
           }} />
           <div style={{
             position: 'absolute', bottom: '-10%', right: '-10%',
             width: '50vw', height: '50vw',
-            background: 'radial-gradient(circle, rgba(168,85,247,0.05) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(255,179,71,0.05) 0%, transparent 65%)',
             pointerEvents: 'none',
           }} />
 
@@ -83,7 +83,7 @@ export default function Preloader({ onDone }) {
             style={{
               position: 'absolute', left: 0, right: 0,
               height: 2,
-              background: 'linear-gradient(90deg, transparent, rgba(0,255,136,0.6), transparent)',
+              background: 'linear-gradient(90deg, transparent, rgba(255,140,66,0.6), transparent)',
               pointerEvents: 'none',
             }}
           />
@@ -153,7 +153,7 @@ export default function Preloader({ onDone }) {
                   fontWeight: 400,
                   fontSize: 'clamp(1rem, 3vw, 1.6rem)',
                   letterSpacing: '0.22em',
-                  color: '#00ff88',
+                  color: '#ff8c42',
                   marginTop: 4,
                 }}
               >
@@ -177,8 +177,8 @@ export default function Preloader({ onDone }) {
                   style={{
                     padding: '4px 12px',
                     borderRadius: 99,
-                    border: `1px solid ${['rgba(0,255,136,0.25)', 'rgba(56,210,247,0.25)', 'rgba(168,85,247,0.25)'][i]}`,
-                    color: ['#00ff88', '#38d2f7', '#a855f7'][i],
+                    border: `1px solid ${['rgba(255,140,66,0.25)', 'rgba(255,255,255,0.25)', 'rgba(255,179,71,0.25)'][i]}`,
+                    color: ['#ff8c42', '#ffffff', '#ffb347'][i],
                     fontFamily: "'JetBrains Mono', monospace",
                     fontSize: '0.65rem',
                     letterSpacing: '0.08em',
@@ -209,7 +209,7 @@ export default function Preloader({ onDone }) {
               }
               style={{
                 height: '100%', originX: 0,
-                background: 'linear-gradient(90deg, #00ff88, #38d2f7)',
+                background: 'linear-gradient(90deg, #ff8c42, #ffffff)',
               }}
             />
           </motion.div>

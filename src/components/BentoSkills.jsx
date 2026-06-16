@@ -45,7 +45,7 @@ const SKILLS = [
   {
     cat: 'DevOps & Tools',
     icon: '🚀',
-    color: '#22d3ee',
+    color: '#ffffff',
     items: ['Git', 'GitHub Actions', 'Docker', 'Linux', 'CI/CD', 'Postman', 'Figma'],
     span: 1,
     desc: 'Ship fast. Break nothing. Repeat.',

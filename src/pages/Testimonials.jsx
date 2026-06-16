@@ -8,7 +8,7 @@ const TESTIMONIALS = [
     role: 'Chief Technology Officer',
     org: 'MemeyAI Group · Nairobi',
     text: 'Tito joined our backend team and hit the ground running. He built RESTful APIs now serving over 1,000 concurrent users, cut average API response time by ~35% through targeted indexing and query refactoring, and integrated five payment gateways without a single downtime incident. He also reduced our bug backlog by ~40% through systematic debugging. The kind of engineer who ships and documents.',
-    color: '#00ff88',
+    color: '#ff8c42',
     initials: 'AW',
     period: 'Feb 2026 – Present',
   },
@@ -17,7 +17,7 @@ const TESTIMONIALS = [
     role: 'Project Director',
     org: 'AIC Kanzinwa Child & Development Centre · Mwingi',
     text: 'When Tito joined us, our IT systems were outdated and our staff were overwhelmed. He deployed custom web and software solutions across 50+ staff endpoints, trained 30 members of staff on digital tools, and reduced our helpdesk ticket volume by 25%. He documented everything so clearly that our team still references his SOPs and user guides today. A rare combination of technical depth and real patience with people.',
-    color: '#38d2f7',
+    color: '#ffffff',
     initials: 'JM',
     period: 'May 2025 – Jan 2026',
   },
@@ -26,7 +26,7 @@ const TESTIMONIALS = [
     role: 'Project Manager',
     org: 'Hatikvah Communication & General Engineering Ltd · Ruiru',
     text: 'Tito led our FTTH and FTTB fiber optic deployments across four regional sites, configured over 100 CPE and ONT devices, and performed OTDR testing and precision fusion splicing — every site delivered on schedule. He also handled network security hardening and designed software solutions that improved our operational efficiency. A field engineer who understands both the cable and the code.',
-    color: '#a855f7',
+    color: '#ffb347',
     initials: 'SC',
     period: 'Feb 2025 – May 2025',
   },
@@ -34,9 +34,9 @@ const TESTIMONIALS = [
 
 // Stats sourced directly from CV — keep in sync with your CV bullet points
 const STATS = [
-  { label: 'Concurrent Users',  value: '1k+',   color: '#00ff88' },
-  { label: 'Staff Trained',     value: '30+',   color: '#38d2f7' },
-  { label: 'Sites Deployed',    value: '4+',    color: '#a855f7' },
+  { label: 'Concurrent Users',  value: '1k+',   color: '#ff8c42' },
+  { label: 'Staff Trained',     value: '30+',   color: '#ffffff' },
+  { label: 'Sites Deployed',    value: '4+',    color: '#ffb347' },
   { label: 'API Uptime',        value: '99.9%', color: '#f59e0b' },
 ]
 
@@ -251,7 +251,7 @@ export default function Testimonials() {
             }}>
               What People{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #00ff88, #38d2f7)',
+                background: 'linear-gradient(135deg, #ff8c42, #ffffff)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               }}>
                 Actually Say
@@ -343,7 +343,7 @@ export default function Testimonials() {
                 transition: 'box-shadow 0.25s, transform 0.25s',
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.boxShadow = '0 0 32px rgba(0,255,136,0.5)'
+                e.currentTarget.style.boxShadow = '0 0 32px rgba(255,140,66,0.5)'
                 e.currentTarget.style.transform = 'translateY(-2px)'
               }}
               onMouseLeave={e => {

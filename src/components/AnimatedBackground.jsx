@@ -55,13 +55,13 @@ function useCanvas(canvasRef, variant) {
           x:Math.random()*W, y:Math.random()*H, size:Math.random()*40+16,
           vx:(Math.random()-.5)*.15, vy:(Math.random()-.5)*.15,
           rot:Math.random()*Math.PI*2, vRot:(Math.random()-.5)*.003,
-          a:.06, c:['rgba(255,120,30,','rgba(56,210,247,','rgba(168,85,247,'][Math.floor(Math.random()*3)],
+          a:.06, c:['rgba(255,140,66,','rgba(255,255,255,','rgba(255,179,71,'][Math.floor(Math.random()*3)],
         }))}
       } else if (variant === 'services') {
         state = { t:0, rings:[
-          {r:130,speed:.0006,dots:5, c:'rgba(0,255,136,'},
-          {r:220,speed:.0004,dots:7, c:'rgba(56,210,247,'},
-          {r:320,speed:.0003,dots:10,c:'rgba(168,85,247,'},
+          {r:130,speed:.0006,dots:5, c:'rgba(255,140,66,'},
+          {r:220,speed:.0004,dots:7, c:'rgba(255,255,255,'},
+          {r:320,speed:.0003,dots:10,c:'rgba(255,179,71,'},
         ]}
       } else if (variant === 'contact') {
         state = { nodes: Array.from({ length: 22 }, () => ({
@@ -83,22 +83,22 @@ function useCanvas(canvasRef, variant) {
           if(p.x<0)p.x=W; if(p.x>W)p.x=0
           if(p.y<0)p.y=H; if(p.y>H)p.y=0
           ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
-          ctx.fillStyle=`rgba(0,255,136,${p.a})`; ctx.fill()
+          ctx.fillStyle=`rgba(255,140,66,${p.a})`; ctx.fill()
         })
         for(let i=0;i<ps.length;i++) for(let j=i+1;j<ps.length;j++){
           const dx=ps[i].x-ps[j].x, dy=ps[i].y-ps[j].y, d=Math.sqrt(dx*dx+dy*dy)
           if(d<110){
             ctx.beginPath(); ctx.moveTo(ps[i].x,ps[i].y); ctx.lineTo(ps[j].x,ps[j].y)
-            ctx.strokeStyle=`rgba(0,255,136,${.1*(1-d/110)})`
+            ctx.strokeStyle=`rgba(255,140,66,${.1*(1-d/110)})`
             ctx.lineWidth=.5; ctx.stroke()
           }
         }
 
       } else if (variant === 'about') {
         state.t+=.006; ctx.clearRect(0,0,W,H)
-        ;[{amp:50,freq:.004,speed:1,c:'rgba(56,210,247,',ph:0},
-          {amp:34,freq:.006,speed:1.3,c:'rgba(168,85,247,',ph:2},
-          {amp:42,freq:.003,speed:.7,c:'rgba(0,255,136,',ph:4}
+        ;[{amp:50,freq:.004,speed:1,c:'rgba(255,255,255,',ph:0},
+          {amp:34,freq:.006,speed:1.3,c:'rgba(255,179,71,',ph:2},
+          {amp:42,freq:.003,speed:.7,c:'rgba(255,140,66,',ph:4}
         ].forEach(w=>{
           ctx.beginPath()
           for(let x=0;x<=W;x+=4){
@@ -110,7 +110,7 @@ function useCanvas(canvasRef, variant) {
 
       } else if (variant === 'projects') {
         ctx.fillStyle='rgba(3,7,18,.04)'; ctx.fillRect(0,0,W,H)
-        ctx.fillStyle='rgba(0,255,136,.18)'; ctx.font='12px JetBrains Mono,monospace'
+        ctx.fillStyle='rgba(255,140,66,.18)'; ctx.font='12px JetBrains Mono,monospace'
         const { cols, drops, chars } = state
         for(let i=0;i<cols;i++){
           ctx.fillText(chars[Math.floor(Math.random()*chars.length)], i*22, drops[i]*22)
@@ -159,12 +159,12 @@ function useCanvas(canvasRef, variant) {
             if(d<140){
               ctx.beginPath(); ctx.moveTo(state.nodes[i].x,state.nodes[i].y)
               ctx.lineTo(state.nodes[j].x,state.nodes[j].y)
-              ctx.strokeStyle=`rgba(56,210,247,${.14*(1-d/140)})`; ctx.lineWidth=.7; ctx.stroke()
+              ctx.strokeStyle=`rgba(255,255,255,${.14*(1-d/140)})`; ctx.lineWidth=.7; ctx.stroke()
             }
           }
           const p=(Math.sin(state.nodes[i].pulse)+1)/2
           ctx.beginPath(); ctx.arc(state.nodes[i].x,state.nodes[i].y,1.8+p*1.8,0,Math.PI*2)
-          ctx.fillStyle=`rgba(56,210,247,${.3+p*.35})`; ctx.fill()
+          ctx.fillStyle=`rgba(255,255,255,${.3+p*.35})`; ctx.fill()
         }
       }
 

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { ThemeToggle } from './ThemeToggle'
 import MagneticButton from './MagneticButton'
 
 const LINKS = [
@@ -71,7 +70,7 @@ export default function Navbar() {
         {scrolled && (
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0, height: 1,
-            background: 'linear-gradient(90deg, transparent, rgba(0,255,136,0.25), rgba(56,210,247,0.15), transparent)',
+            background: 'linear-gradient(90deg, transparent, rgba(255,140,66,0.25), rgba(255,255,255,0.15), transparent)',
           }} />
         )}
 
@@ -151,8 +150,8 @@ export default function Navbar() {
                     fontFamily: 'var(--font-mono)', fontSize: '0.78rem',
                     letterSpacing: '0.04em',
                     color: isActive ? '#fff' : 'rgba(255,255,255,0.5)',
-                    background: isActive ? 'rgba(0,255,136,0.12)' : 'transparent',
-                    border: isActive ? '1px solid rgba(0,255,136,0.2)' : '1px solid transparent',
+                    background: isActive ? 'rgba(255,140,66,0.12)' : 'transparent',
+                    border: isActive ? '1px solid rgba(255,140,66,0.2)' : '1px solid transparent',
                     transition: 'color 0.2s, background 0.2s',
                   })}
                 >
@@ -179,7 +178,6 @@ export default function Navbar() {
 
           {/* ── CTA + Hamburger ──────────────────────────────── */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <ThemeToggle />
             <MagneticButton className="nav-cta-wrap">
               <NavLink to="/contact"
                 style={{
@@ -191,7 +189,7 @@ export default function Navbar() {
                   letterSpacing: '0.06em',
                   transition: 'box-shadow 0.25s',
                 }}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 24px rgba(0,255,136,0.5)' }}
+                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 24px rgba(255,140,66,0.5)' }}
                 onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none' }}
               >
                 Hire Me
@@ -252,7 +250,7 @@ export default function Navbar() {
               {/* Drawer gradient accent */}
               <div style={{
                 position: 'absolute', top: 0, right: 0, width: 120, height: 200,
-                background: 'radial-gradient(circle at top right, rgba(0,255,136,0.08), transparent 70%)',
+                background: 'radial-gradient(circle at top right, rgba(255,140,66,0.08), transparent 70%)',
                 pointerEvents: 'none',
               }} />
 
@@ -270,7 +268,7 @@ export default function Navbar() {
                         padding: '13px 16px', borderRadius: 10,
                         fontFamily: 'var(--font-mono)', fontSize: '0.9rem',
                         color: isActive ? '#fff' : 'rgba(255,255,255,0.45)',
-                        background: isActive ? 'rgba(0,255,136,0.08)' : 'transparent',
+                        background: isActive ? 'rgba(255,140,66,0.08)' : 'transparent',
                         borderLeft: isActive ? '3px solid var(--primary)' : '3px solid transparent',
                         transition: 'all 0.2s',
                       })}

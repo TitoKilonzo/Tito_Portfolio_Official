@@ -11,9 +11,9 @@ const PAGE = {
 }
 
 const CAT_META = {
-  Cybersecurity: { color: '#00ff88', icon: Shield },
-  Technology:    { color: '#38d2f7', icon: Cpu },
-  Dev:           { color: '#a855f7', icon: Code2 },
+  Cybersecurity: { color: '#ff8c42', icon: Shield },
+  Technology:    { color: '#ffffff', icon: Cpu },
+  Dev:           { color: '#ffb347', icon: Code2 },
 }
 
 function ShimmerCard() {

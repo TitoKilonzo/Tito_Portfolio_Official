@@ -13,6 +13,7 @@ import Blog from './pages/Blog'
 import Contact from './pages/Contact'
 import Services from './pages/Services'
 import Testimonials from './pages/Testimonials'
+import WhatsAppButton from './components/WhatsAppButton'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -38,6 +39,7 @@ function AppInner() {
           <Route path="/testimonials" element={<Testimonials />} />
         </Routes>
       </AnimatePresence>
+      <WhatsAppButton />
       <Footer />
     </>
   )
