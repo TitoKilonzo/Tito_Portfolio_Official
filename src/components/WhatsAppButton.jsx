@@ -70,7 +70,7 @@ export default function WhatsAppButton() {
             <div style={{
               position: 'absolute', bottom: -6, right: 22,
               width: 12, height: 12,
-              background: 'rgba(13,26,45,0.85)',
+              background: 'var(--bg-card)',
               borderRight: '1px solid var(--border-hover)',
               borderBottom: '1px solid var(--border-hover)',
               transform: 'rotate(45deg)',

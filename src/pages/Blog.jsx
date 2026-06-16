@@ -12,7 +12,7 @@ const PAGE = {
 
 const CAT_META = {
   Cybersecurity: { color: '#ff8c42', icon: Shield },
-  Technology:    { color: '#ffffff', icon: Cpu },
+  Technology:    { color: 'var(--text)', icon: Cpu },
   Dev:           { color: '#ffb347', icon: Code2 },
 }
 

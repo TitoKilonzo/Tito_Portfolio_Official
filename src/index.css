@@ -97,7 +97,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.2; }
 .conic-border { position: relative; }
 .conic-border::before {
   content:''; position:absolute; inset:-1px; border-radius:inherit;
-  background: conic-gradient(from var(--angle), #ff8c42, #ff6b35, #ffffff, #ff8c42);
+  background: conic-gradient(from var(--angle), #ff8c42, #ff6b35, var(--text), #ff8c42);
   animation: conic-spin 4s linear infinite; z-index:-1;
 }
 .conic-border::after {
@@ -263,7 +263,7 @@ h1,h2,h3,h4,h5,h6 { font-family: var(--font-display); line-height: 1.2; }
 .timeline { position: relative; padding-left: clamp(24px,4vw,36px); }
 .timeline::before {
   content:''; position:absolute; left:11px; top:0; bottom:0; width:2px;
-  background: linear-gradient(to bottom, #ff8c42, #ff6b35, #ffffff);
+  background: linear-gradient(to bottom, #ff8c42, #ff6b35, var(--text));
 }
 @media(max-width:480px){
   .timeline { padding-left: 28px; }

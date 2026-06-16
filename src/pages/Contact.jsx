@@ -53,7 +53,7 @@ export default function Contact() {
     if (errors[name]) setErrors(x => { const n={...x}; delete n[name]; return n })
   }
   function onFocus(e, err) { if (!err) e.currentTarget.style.borderColor = 'var(--primary)' }
-  function onBlur(e, err)  { if (!err) e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)' }
+  function onBlur(e, err)  { if (!err) e.currentTarget.style.borderColor = 'var(--border)' }
 
   async function onSubmit(e) {
     e.preventDefault()

@@ -38,7 +38,7 @@ export default function Footer() {
               </div>
               <div>
                 <div style={{ fontFamily:'var(--font-display)', fontWeight:800, fontSize:'0.95rem',
-                  background:'linear-gradient(90deg,#fff,rgba(255,255,255,0.7))',
+                  background:'linear-gradient(90deg,var(--text),var(--text-muted))',
                   WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>Tito Kilonzo</div>
                 <div style={{ fontFamily:'var(--font-mono)', fontSize:'0.58rem', color:'var(--primary)',
                   letterSpacing:'0.12em', textTransform:'uppercase' }}>Developer</div>

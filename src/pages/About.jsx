@@ -29,7 +29,7 @@ const EXPERIENCE = [
   {
     role:'ICT Assistant & Trainer', company:'AIC Kanzinwa CDC', period:'May 2025 – Jan 2026',
     highlights:['Delivered ICT training to 30+ staff; reduced help-desk tickets ~25%','Provided L1/L2 support across 50+ endpoints at 90%+ SLA','Administered Active Directory and security patches across 60+ devices'],
-    icon:User, color:'#ffffff',
+    icon:User, color:'var(--text)',
   },
   {
     role:'IT Support & Consultant', company:'Hatikvah Communication & Engineering', period:'Feb 2025 – May 2025',
@@ -118,7 +118,7 @@ function FlipCard() {
             ) : (
               <>
                 <div style={{ width:40, height:40, borderRadius:'50%',
-                  background:'conic-gradient(from var(--angle,0deg),#ff8c42,#ffffff,#ffb347,#ff8c42)',
+                  background:'conic-gradient(from var(--angle,0deg),#ff8c42,var(--text),#ffb347,#ff8c42)',
                   animation:'conic-spin 4s linear infinite',
                   display:'flex', alignItems:'center', justifyContent:'center' }}>
                   <User size={18} color="#000" />

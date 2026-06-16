@@ -17,7 +17,7 @@ const TESTIMONIALS = [
     role: 'Project Director',
     org: 'AIC Kanzinwa Child & Development Centre · Mwingi',
     text: 'When Tito joined us, our IT systems were outdated and our staff were overwhelmed. He deployed custom web and software solutions across 50+ staff endpoints, trained 30 members of staff on digital tools, and reduced our helpdesk ticket volume by 25%. He documented everything so clearly that our team still references his SOPs and user guides today. A rare combination of technical depth and real patience with people.',
-    color: '#ffffff',
+    color: 'var(--text)',
     initials: 'JM',
     period: 'May 2025 – Jan 2026',
   },
@@ -35,7 +35,7 @@ const TESTIMONIALS = [
 // Stats sourced directly from CV — keep in sync with your CV bullet points
 const STATS = [
   { label: 'Concurrent Users',  value: '1k+',   color: '#ff8c42' },
-  { label: 'Staff Trained',     value: '30+',   color: '#ffffff' },
+  { label: 'Staff Trained',     value: '30+',   color: 'var(--text)' },
   { label: 'Sites Deployed',    value: '4+',    color: '#ffb347' },
   { label: 'API Uptime',        value: '99.9%', color: '#f59e0b' },
 ]
@@ -53,8 +53,8 @@ function TestimonialCard({ t, isActive, onClick, index }) {
         position: 'relative',
         borderRadius: 20,
         padding: isActive ? 'clamp(24px,4vw,36px)' : 'clamp(18px,3vw,24px)',
-        background: isActive ? `${t.color}0d` : 'rgba(13,26,45,0.55)',
-        border: `1px solid ${isActive ? t.color + '35' : 'rgba(255,255,255,0.07)'}`,
+        background: isActive ? `${t.color}0d` : 'var(--bg-card)',
+        border: `1px solid ${isActive ? t.color + '35' : 'var(--border)'}`,
         backdropFilter: 'blur(20px)',
         cursor: isActive ? 'default' : 'pointer',
         transition: 'border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease',
@@ -240,7 +240,7 @@ export default function Testimonials() {
 
             <h1 style={{
               fontFamily: 'var(--font-display)', fontWeight: 800,
-              fontSize: 'var(--text-3xl)', color: '#fff',
+              fontSize: 'var(--text-3xl)', color: 'var(--text)',
               lineHeight: 1.1, maxWidth: 560,
             }}>
               What People{' '}
@@ -269,8 +269,8 @@ export default function Testimonials() {
               display: 'flex', flexWrap: 'wrap', gap: 24,
               padding: 'clamp(16px,3vw,24px)',
               borderRadius: 16,
-              background: 'rgba(13,26,45,0.55)',
-              border: '1px solid rgba(255,255,255,0.07)',
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border)',
               backdropFilter: 'blur(20px)',
               marginBottom: 'clamp(24px,4vw,40px)',
             }}

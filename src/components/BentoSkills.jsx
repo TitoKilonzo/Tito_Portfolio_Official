@@ -45,7 +45,7 @@ const SKILLS = [
   {
     cat: 'DevOps & Tools',
     icon: '🚀',
-    color: '#ffffff',
+    color: 'var(--text)',
     items: ['Git', 'GitHub Actions', 'Docker', 'Linux', 'CI/CD', 'Postman', 'Figma'],
     span: 1,
     desc: 'Ship fast. Break nothing. Repeat.',
@@ -78,8 +78,8 @@ function BentoCard({ skill, delay = 0 }) {
         gridColumn: `span ${skill.span}`,
         position: 'relative', overflow: 'hidden',
         borderRadius: 20,
-        background: 'rgba(13,26,45,0.55)',
-        border: `1px solid ${hovered ? skill.color + '40' : 'rgba(255,255,255,0.07)'}`,
+        background: 'var(--bg-card)',
+        border: `1px solid ${hovered ? skill.color + '40' : 'var(--border)'}`,
         padding: 'clamp(20px,3vw,28px)',
         display: 'flex', flexDirection: 'column', gap: 16,
         transition: 'border-color 0.35s ease, box-shadow 0.35s ease',
@@ -160,8 +160,8 @@ function BentoCard({ skill, delay = 0 }) {
               fontFamily: 'var(--font-mono)',
               fontSize: '0.67rem',
               color: hovered ? skill.color : 'var(--text-muted)',
-              background: hovered ? skill.color + '10' : 'rgba(255,255,255,0.04)',
-              border: `1px solid ${hovered ? skill.color + '30' : 'rgba(255,255,255,0.07)'}`,
+              background: hovered ? skill.color + '10' : 'var(--bg-card)',
+              border: `1px solid ${hovered ? skill.color + '30' : 'var(--border)'}`,
               transition: 'all 0.25s ease',
               whiteSpace: 'nowrap',
             }}
@@ -204,7 +204,7 @@ export default function BentoSkills() {
         </div>
         <h2 style={{
           fontFamily: 'var(--font-display)', fontWeight: 800,
-          fontSize: 'var(--text-2xl)', color: '#fff',
+          fontSize: 'var(--text-2xl)', color: 'var(--text)',
         }}>
           Tech Stack
         </h2>

@@ -109,7 +109,7 @@ export default function Home() {
                 style={{ fontSize:'var(--text-4xl)', fontWeight:800, lineHeight:1.1, margin:'14px 0 18px' }}>
                 <span style={{ display:'block', color:'var(--text)' }}>Hi, I'm</span>
                 <span style={{ display:'block',
-                  background:'linear-gradient(135deg,#ff8c42 0%,#ffffff 50%,#ffb347 100%)',
+                  background:'linear-gradient(135deg,#ff8c42 0%,var(--text) 50%,#ffb347 100%)',
                   WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
                   Tito Kilonzo
                 </span>
@@ -193,7 +193,7 @@ export default function Home() {
                 style={{ textAlign:'center', padding:'14px 8px' }}>
                 <Icon size={16} color="var(--primary)" style={{ margin:'0 auto 7px' }} />
                 <div style={{ fontFamily:'var(--font-display)', fontWeight:800, fontSize:'var(--text-2xl)',
-                  background:'linear-gradient(135deg,#ff8c42,#ffffff)',
+                  background:'linear-gradient(135deg,#ff8c42,var(--text))',
                   WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>{value}</div>
                 <div style={{ color:'var(--text-muted)', fontSize:'var(--text-xs)',
                   fontFamily:'var(--font-mono)', letterSpacing:'0.05em',

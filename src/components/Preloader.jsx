@@ -177,8 +177,8 @@ export default function Preloader({ onDone }) {
                   style={{
                     padding: '4px 12px',
                     borderRadius: 99,
-                    border: `1px solid ${['rgba(255,140,66,0.25)', 'rgba(255,255,255,0.25)', 'rgba(255,179,71,0.25)'][i]}`,
-                    color: ['#ff8c42', '#ffffff', '#ffb347'][i],
+                    border: `1px solid ${['rgba(255,140,66,0.25)', 'var(--border)', 'rgba(255,179,71,0.25)'][i]}`,
+                    color: ['#ff8c42', 'var(--text)', '#ffb347'][i],
                     fontFamily: "'JetBrains Mono', monospace",
                     fontSize: '0.65rem',
                     letterSpacing: '0.08em',
@@ -195,7 +195,7 @@ export default function Preloader({ onDone }) {
             style={{
               position: 'absolute', bottom: 40, left: '10%', right: '10%',
               height: 1,
-              background: 'rgba(255,255,255,0.06)',
+              background: 'var(--border)',
               borderRadius: 99,
               overflow: 'hidden',
             }}
@@ -209,7 +209,7 @@ export default function Preloader({ onDone }) {
               }
               style={{
                 height: '100%', originX: 0,
-                background: 'linear-gradient(90deg, #ff8c42, #ffffff)',
+                background: 'linear-gradient(90deg, #ff8c42, var(--text))',
               }}
             />
           </motion.div>

@@ -70,7 +70,7 @@ export default function Navbar() {
         {scrolled && (
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0, height: 1,
-            background: 'linear-gradient(90deg, transparent, rgba(255,140,66,0.25), rgba(255,255,255,0.15), transparent)',
+            background: 'linear-gradient(90deg, transparent, rgba(255,140,66,0.25), var(--border), transparent)',
           }} />
         )}
 
@@ -109,7 +109,7 @@ export default function Navbar() {
             <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
               <span style={{
                 fontFamily: 'var(--font-display)', fontWeight: 800, fontSize: '1rem',
-                background: 'linear-gradient(90deg,#fff 0%,rgba(255,255,255,0.7) 100%)',
+                background: 'linear-gradient(90deg,var(--text) 0%,var(--text-muted) 100%)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               }}>Tito Kilonzo</span>
               <span style={{
@@ -123,8 +123,8 @@ export default function Navbar() {
           {/* ── Desktop nav ──────────────────────────────────── */}
           <ul className="desktop-nav" style={{
             display: 'flex', alignItems: 'center', gap: 2,
-            background: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(255,255,255,0.05)',
+            background: 'var(--bg-card)',
+            border: '1px solid var(--border)',
             borderRadius: 99, padding: '5px 6px',
           }}>
             {LINKS.map(({ to, label }) => (
@@ -136,7 +136,7 @@ export default function Navbar() {
                     layoutId="nav-hover"
                     style={{
                       position: 'absolute', inset: 0, borderRadius: 99,
-                      background: 'rgba(255,255,255,0.06)',
+                      background: 'var(--border)',
                     }}
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                   />
@@ -149,7 +149,7 @@ export default function Navbar() {
                     borderRadius: 99,
                     fontFamily: 'var(--font-mono)', fontSize: '0.78rem',
                     letterSpacing: '0.04em',
-                    color: isActive ? '#fff' : 'rgba(255,255,255,0.5)',
+                    color: isActive ? 'var(--text)' : 'var(--text-muted)',
                     background: isActive ? 'rgba(255,140,66,0.12)' : 'transparent',
                     border: isActive ? '1px solid rgba(255,140,66,0.2)' : '1px solid transparent',
                     transition: 'color 0.2s, background 0.2s',
@@ -187,8 +187,8 @@ export default function Navbar() {
               style={{
                 width: 40, height: 40, borderRadius: 10,
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                background: 'rgba(255,255,255,0.04)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border)',
                 color: 'var(--text)', cursor: 'pointer',
               }}
             >
@@ -223,9 +223,9 @@ export default function Navbar() {
               style={{
                 position: 'fixed', top: 0, right: 0, bottom: 0,
                 width: 'min(300px, 88vw)', zIndex: 999,
-                background: 'rgba(8,15,26,0.97)',
+                background: 'rgba(255, 255, 255, 0.97)',
                 backdropFilter: 'blur(30px)',
-                borderLeft: '1px solid rgba(255,255,255,0.07)',
+                borderLeft: '1px solid var(--border)',
                 display: 'flex', flexDirection: 'column',
                 padding: '90px 20px 36px',
               }}
@@ -250,7 +250,7 @@ export default function Navbar() {
                         display: 'flex', alignItems: 'center', gap: 12,
                         padding: '13px 16px', borderRadius: 10,
                         fontFamily: 'var(--font-mono)', fontSize: '0.9rem',
-                        color: isActive ? '#fff' : 'rgba(255,255,255,0.45)',
+                        color: isActive ? 'var(--text)' : 'var(--text-muted)',
                         background: isActive ? 'rgba(255,140,66,0.08)' : 'transparent',
                         borderLeft: isActive ? '3px solid var(--primary)' : '3px solid transparent',
                         transition: 'all 0.2s',
@@ -259,7 +259,7 @@ export default function Navbar() {
                       {({ isActive }) => (
                         <>
                           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem',
-                            color: isActive ? 'var(--primary)' : 'rgba(255,255,255,0.2)',
+                            color: isActive ? 'var(--primary)' : 'var(--text-faint)',
                             width: 20 }}>0{i + 1}</span>
                           {label}
                         </>
@@ -269,7 +269,7 @@ export default function Navbar() {
                 ))}
               </nav>
 
-              <div style={{ marginTop: 'auto', paddingTop: 20, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+              <div style={{ marginTop: 'auto', paddingTop: 20, borderTop: '1px solid var(--border)' }}>
                 <NavLink to="/contact" onClick={() => setOpen(false)}
                   style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
