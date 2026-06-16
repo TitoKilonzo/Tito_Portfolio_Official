@@ -148,7 +148,7 @@ export default function Blog() {
           {/* Header */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             style={{ marginBottom: 48 }}>
-
+            <h3 style={{color: 'var(--primary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 'var(--text-sm)', marginBottom: '16px'}}>Tech & Cyber Blog</h3>
             <h1 className="section-title">Emerging Trends & Insights</h1>
             <p className="section-desc">
               Auto-curated daily articles on cybersecurity, technology, and development — sourced from Dev.to.

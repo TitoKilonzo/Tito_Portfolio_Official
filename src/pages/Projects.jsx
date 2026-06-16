@@ -91,7 +91,7 @@ export default function Projects() {
             style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
               flexWrap: 'wrap', gap: 20, marginBottom: 48 }}>
             <div>
-
+              <h3 style={{color: 'var(--primary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 'var(--text-sm)', marginBottom: '16px'}}>GitHub Projects</h3>
               <h1 className="section-title">What I've Built</h1>
               <p className="section-desc">
                 Live-updated from{' '}

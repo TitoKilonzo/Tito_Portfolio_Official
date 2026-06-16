@@ -241,7 +241,7 @@ export default function Services() {
           {/* Header */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
             style={{ marginBottom: 48 }}>
-
+            <h3 style={{color: 'var(--primary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 'var(--text-sm)', marginBottom: '16px'}}>Services</h3>
             <h1 className="section-title">What I Can Do For You</h1>
             <p className="section-desc">
               End-to-end ICT services for SMBs, NGOs, and startups — locally and internationally. 

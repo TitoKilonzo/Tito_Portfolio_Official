@@ -238,6 +238,7 @@ export default function Testimonials() {
             style={{ marginBottom: 'clamp(40px,7vw,64px)' }}
           >
 
+            <h3 style={{color: 'var(--primary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 'var(--text-sm)', marginBottom: '16px'}}>Referees & Testimonials</h3>
             <h1 style={{
               fontFamily: 'var(--font-display)', fontWeight: 800,
               fontSize: 'var(--text-3xl)', color: 'var(--text)',
