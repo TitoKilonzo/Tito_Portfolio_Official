@@ -136,7 +136,7 @@ function TestimonialCard({ t, isActive, onClick, index }) {
               alignSelf: 'flex-start',
             }}
           >
-            📅 {t.period}
+            {t.period}
           </motion.div>
         )}
 
@@ -237,13 +237,7 @@ export default function Testimonials() {
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             style={{ marginBottom: 'clamp(40px,7vw,64px)' }}
           >
-            <div style={{
-              fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)',
-              color: 'var(--primary)', letterSpacing: '0.15em', textTransform: 'uppercase',
-              marginBottom: 12,
-            }}>
-              ◆ Referees & Testimonials
-            </div>
+
             <h1 style={{
               fontFamily: 'var(--font-display)', fontWeight: 800,
               fontSize: 'var(--text-3xl)', color: '#fff',

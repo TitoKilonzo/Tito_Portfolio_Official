@@ -147,7 +147,7 @@ export default function About() {
       <section className="section" style={{ paddingBottom:'clamp(24px,4vw,40px)', position:'relative', zIndex:1 }}>
         <div className="container">
           <motion.div initial={{ opacity:0, y:18 }} animate={{ opacity:1, y:0 }}>
-            <span className="section-tag">About Me</span>
+
             <h1 className="section-title">The Developer Behind the Code</h1>
             <p className="section-desc">
               BSc IT graduate with hands-on expertise spanning back-end development, cybersecurity, and fiber optic infrastructure.
@@ -215,7 +215,7 @@ export default function About() {
         <div className="container">
           <motion.div initial={{ opacity:0, y:14 }} whileInView={{ opacity:1, y:0 }}
             viewport={{ once:true }} style={{ marginBottom:'clamp(24px,4vw,40px)' }}>
-            <span className="section-tag">Experience</span>
+
             <h2 className="section-title">Work History</h2>
           </motion.div>
           <div className="timeline">
@@ -269,7 +269,7 @@ export default function About() {
         <div className="container">
           <motion.div initial={{ opacity:0, y:14 }} whileInView={{ opacity:1, y:0 }}
             viewport={{ once:true }} style={{ marginBottom:'clamp(20px,3vw,28px)' }}>
-            <span className="section-tag">Education</span>
+
             <h2 className="section-title">Academic Background</h2>
           </motion.div>
           <motion.div initial={{ opacity:0, y:18 }} whileInView={{ opacity:1, y:0 }} viewport={{ once:true }}>

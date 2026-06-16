@@ -103,13 +103,7 @@ export default function Home() {
 
             {/* Left: copy */}
             <div>
-              <motion.div initial={{ opacity:0, y:14 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.1 }}>
-                <span className="section-tag">
-                  <span style={{ width:5, height:5, background:'var(--primary)', borderRadius:'50%',
-                    animation:'pulse-glow 2s ease-in-out infinite', display:'inline-block' }} />
-                  Available for Opportunities
-                </span>
-              </motion.div>
+
 
               <motion.h1 initial={{ opacity:0, y:24 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.18 }}
                 style={{ fontSize:'var(--text-4xl)', fontWeight:800, lineHeight:1.1, margin:'14px 0 18px' }}>
@@ -215,7 +209,7 @@ export default function Home() {
         <div className="container">
           <motion.div initial={{ opacity:0, y:14 }} whileInView={{ opacity:1, y:0 }}
             viewport={{ once:true }} style={{ textAlign:'center', marginBottom:48 }}>
-            <span className="section-tag">Explore</span>
+
             <h2 className="section-title" style={{ textAlign:'center' }}>What I Bring to the Table</h2>
           </motion.div>
 

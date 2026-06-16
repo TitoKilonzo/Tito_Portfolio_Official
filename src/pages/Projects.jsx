@@ -91,7 +91,7 @@ export default function Projects() {
             style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between',
               flexWrap: 'wrap', gap: 20, marginBottom: 48 }}>
             <div>
-              <span className="section-tag">GitHub Projects</span>
+
               <h1 className="section-title">What I've Built</h1>
               <p className="section-desc">
                 Live-updated from{' '}

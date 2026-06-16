@@ -178,23 +178,6 @@ export default function Navbar() {
 
           {/* ── CTA + Hamburger ──────────────────────────────── */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <MagneticButton className="nav-cta-wrap">
-              <NavLink to="/contact"
-                style={{
-                  display: 'inline-flex', alignItems: 'center', gap: 7,
-                  padding: '9px 20px', borderRadius: 99,
-                  background: 'var(--primary)',
-                  color: '#000',
-                  fontFamily: 'var(--font-mono)', fontWeight: 700, fontSize: '0.78rem',
-                  letterSpacing: '0.06em',
-                  transition: 'box-shadow 0.25s',
-                }}
-                onMouseEnter={e => { e.currentTarget.style.boxShadow = '0 0 24px rgba(255,140,66,0.5)' }}
-                onMouseLeave={e => { e.currentTarget.style.boxShadow = 'none' }}
-              >
-                Hire Me
-              </NavLink>
-            </MagneticButton>
 
             <motion.button
               className="hamburger"

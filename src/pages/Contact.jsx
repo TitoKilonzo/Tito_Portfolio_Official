@@ -79,7 +79,7 @@ export default function Contact() {
           {/* Header */}
           <motion.div initial={{ opacity:0, y:18 }} animate={{ opacity:1, y:0 }}
             style={{ marginBottom:'clamp(36px,6vw,60px)' }}>
-            <span className="section-tag">Get In Touch</span>
+            <h3 style={{color: 'var(--primary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 'var(--text-sm)', marginBottom: '16px'}}>Get In Touch</h3>
             <h1 className="section-title">Let's Build Something Together</h1>
             <p className="section-desc">
               Available for freelance, part-time, and full-time opportunities — security assessments, full-stack projects, or just a conversation.
