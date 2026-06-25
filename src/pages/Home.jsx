@@ -112,13 +112,31 @@ export default function Home() {
                 </h3>
               </motion.div>
 
-              <motion.h1 initial={{ opacity:0, y:24 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.18 }}
-                style={{ fontSize:'var(--text-4xl)', fontWeight:800, lineHeight:1.1, margin:'14px 0 18px' }}>
-                <span style={{ display:'block', color:'var(--text)' }}>Hi, I'm</span>
-                <span style={{ display:'block',
-                  background:'linear-gradient(135deg,#ff8c42 0%,var(--text) 50%,#ffb347 100%)',
-                  WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>
-                  Tito Kilonzo
+              <motion.h1 className="hero-title"
+                initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}
+                style={{
+                  fontFamily: 'var(--font-display)', fontWeight: 800,
+                  fontSize: 'clamp(3rem, 8vw, 6rem)',
+                  lineHeight: 1.05,
+                  color: 'var(--text)',
+                  marginBottom: 24,
+                  letterSpacing: '-0.03em',
+                }}>
+                I engineer <br />
+                <span style={{
+                  color: 'var(--primary)',
+                  position: 'relative', display: 'inline-block'
+                }}>
+                  digital systems.
+                  {/* Animated underline */}
+                  <motion.span
+                    initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.8, duration: 0.8 }}
+                    style={{
+                      position: 'absolute', bottom: '10%', left: 0, right: 0, height: '0.12em',
+                      background: 'var(--primary)', opacity: 0.4, zIndex: -1, transformOrigin: 'left',
+                      borderRadius: 4
+                    }}
+                  />
                 </span>
               </motion.h1>
 

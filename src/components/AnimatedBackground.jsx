@@ -187,7 +187,7 @@ function AnimatedBackground({ variant = 'home' }) {
   return (
     <div style={{ position:'fixed', inset:0, zIndex:0, pointerEvents:'none', overflow:'hidden' }}>
 
-      {/* 1 — Photo with Ken Burns */}
+      {/* 1 — Base background image (darkened heavily) */}
       <div style={{
         position:'absolute', inset:'-10%',
         backgroundImage:`url(${cfg.src})`,
@@ -195,43 +195,34 @@ function AnimatedBackground({ variant = 'home' }) {
         backgroundPosition:'center',
         animation:`kb-${cfg.ken} 24s ease-in-out infinite alternate`,
         willChange:'transform',
-      }} />
-
-      {/* 2 — Heavy dark base scrim — this is the key fix */}
-      <div style={{
-        position:'absolute', inset:0,
-        background:'rgba(3,7,18,0.82)',
-      }} />
-
-      {/* 3 — Bottom gradient: content areas get extra darkening */}
-      <div style={{
-        position:'absolute', inset:0,
-        background:'linear-gradient(to bottom, rgba(3,7,18,0.5) 0%, rgba(3,7,18,0.75) 50%, rgba(3,7,18,0.95) 100%)',
-      }} />
-
-      {/* 4 — Edge vignette */}
-      <div style={{
-        position:'absolute', inset:0,
-        background:'radial-gradient(ellipse 90% 80% at 50% 40%, transparent 30%, rgba(3,7,18,0.6) 100%)',
-      }} />
-
-      {/* 5 — Subtle photo bleed through — visible but never overpowering */}
-      <div style={{
-        position:'absolute', inset:'-10%',
-        backgroundImage:`url(${cfg.src})`,
-        backgroundSize:'cover',
-        backgroundPosition:'center',
-        animation:`kb-${cfg.ken} 24s ease-in-out infinite alternate`,
-        willChange:'transform',
-        opacity:0.06,
+        opacity:0.15,
         mixBlendMode:'luminosity',
       }} />
 
-      {/* 6 — Canvas particles/waves (subtle) */}
+      {/* 2 — Dark base overlay from theme */}
+      <div style={{
+        position:'absolute', inset:0,
+        background:'var(--bg-primary)',
+        opacity: 0.85,
+      }} />
+
+      {/* 3 — Ambient glowing gradient similar to TechPulse */}
+      <div style={{
+        position:'absolute', inset:0,
+        background:'radial-gradient(ellipse at 50% 0%, rgba(245, 158, 11, 0.05) 0%, transparent 60%), radial-gradient(ellipse at 100% 100%, rgba(232, 134, 12, 0.05) 0%, transparent 50%)',
+      }} />
+
+      {/* 4 — Edge vignette for depth */}
+      <div style={{
+        position:'absolute', inset:0,
+        background:'radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, var(--bg-primary) 100%)',
+      }} />
+
+      {/* 5 — Canvas particles/waves */}
       <canvas ref={canvasRef} style={{
         position:'absolute', inset:0,
         width:'100%', height:'100%',
-        opacity:0.7,
+        opacity:0.6,
       }} />
     </div>
   )
