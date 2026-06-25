@@ -58,8 +58,8 @@ export default function Navbar() {
         <div style={{
           position: 'absolute', inset: 0,
           background: scrolled
-            ? 'rgba(12, 10, 9, 0.85)'
-            : 'linear-gradient(180deg,rgba(12, 10, 9, 0.5) 0%,transparent 100%)',
+            ? 'rgba(255, 255, 255, 0.85)'
+            : 'linear-gradient(180deg,rgba(255, 255, 255, 0.5) 0%,transparent 100%)',
           backdropFilter: scrolled ? 'blur(16px)' : 'blur(0px)',
           WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'blur(0px)',
           transition: 'all 0.45s cubic-bezier(0.4,0,0.2,1)',
@@ -223,7 +223,7 @@ export default function Navbar() {
               style={{
                 position: 'fixed', top: 0, right: 0, bottom: 0,
                 width: 'min(300px, 88vw)', zIndex: 999,
-                background: 'rgba(12, 10, 9, 0.95)',
+                background: 'rgba(255, 255, 255, 0.95)',
                 backdropFilter: 'blur(30px)',
                 borderLeft: '1px solid var(--border)',
                 display: 'flex', flexDirection: 'column',

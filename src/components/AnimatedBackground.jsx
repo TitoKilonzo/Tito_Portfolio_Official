@@ -187,42 +187,31 @@ function AnimatedBackground({ variant = 'home' }) {
   return (
     <div style={{ position:'fixed', inset:0, zIndex:0, pointerEvents:'none', overflow:'hidden' }}>
 
-      {/* 1 — Base background image (darkened heavily) */}
-      <div style={{
-        position:'absolute', inset:'-10%',
-        backgroundImage:`url(${cfg.src})`,
-        backgroundSize:'cover',
-        backgroundPosition:'center',
-        animation:`kb-${cfg.ken} 24s ease-in-out infinite alternate`,
-        willChange:'transform',
-        opacity:0.15,
-        mixBlendMode:'luminosity',
-      }} />
-
-      {/* 2 — Dark base overlay from theme */}
+      {/* 1 — Clean White Base */}
       <div style={{
         position:'absolute', inset:0,
         background:'var(--bg-primary)',
-        opacity: 0.85,
       }} />
 
-      {/* 3 — Ambient glowing gradient similar to TechPulse */}
+      {/* 2 — Subtle Golden Orange Mesh Gradient */}
       <div style={{
         position:'absolute', inset:0,
-        background:'radial-gradient(ellipse at 50% 0%, rgba(245, 158, 11, 0.05) 0%, transparent 60%), radial-gradient(ellipse at 100% 100%, rgba(232, 134, 12, 0.05) 0%, transparent 50%)',
+        background:'radial-gradient(ellipse at 10% 0%, rgba(245, 158, 11, 0.04) 0%, transparent 60%), radial-gradient(ellipse at 90% 100%, rgba(249, 115, 22, 0.04) 0%, transparent 60%)',
+        opacity: 0.9,
       }} />
 
-      {/* 4 — Edge vignette for depth */}
+      {/* 3 — Soft edge vignette */}
       <div style={{
         position:'absolute', inset:0,
-        background:'radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, var(--bg-primary) 100%)',
+        background:'radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(0,0,0,0.02) 100%)',
       }} />
 
-      {/* 5 — Canvas particles/waves */}
+      {/* 4 — Canvas particles/waves (very subtle light particles) */}
       <canvas ref={canvasRef} style={{
         position:'absolute', inset:0,
         width:'100%', height:'100%',
-        opacity:0.6,
+        opacity:0.2, /* Much lighter for light theme */
+        mixBlendMode: 'multiply'
       }} />
     </div>
   )

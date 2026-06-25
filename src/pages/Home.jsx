@@ -178,12 +178,12 @@ export default function Home() {
               initial={{ opacity:0, scale:0.92 }} animate={{ opacity:1, scale:1 }}
               transition={{ delay:0.28, type:'spring', stiffness:100 }}>
               <WaveCard>
-                <div className="glass conic-border" style={{ borderRadius:'var(--radius)',
-                  overflow:'hidden', boxShadow:'0 24px 64px rgba(0,0,0,0.55)' }}>
+                <div className="conic-border" style={{ borderRadius:'var(--radius)',
+                  overflow:'hidden', boxShadow:'0 24px 64px rgba(0,0,0,0.15)', background: '#1e1e1e' }}>
                   {/* Title bar */}
-                  <div style={{ background:'rgba(0,0,0,0.5)', padding:'11px 16px',
+                  <div style={{ background:'rgba(0,0,0,0.3)', padding:'11px 16px',
                     display:'flex', alignItems:'center', justifyContent:'space-between',
-                    borderBottom:'1px solid var(--border)' }}>
+                    borderBottom:'1px solid rgba(255,255,255,0.1)' }}>
                     <div style={{ display:'flex', gap:7 }}>
                       {['#ef4444','#f59e0b','#22c55e'].map(c => (
                         <div key={c} style={{ width:10, height:10, borderRadius:'50%', background:c }} />
@@ -196,7 +196,7 @@ export default function Home() {
                   </div>
                   {/* Code */}
                   <div style={{ padding:'18px 22px', fontFamily:'var(--font-mono)', fontSize:'0.78rem',
-                    lineHeight:1.75, background:'rgba(0,0,0,0.2)' }}>
+                    lineHeight:1.75, background:'transparent' }}>
                     {CODE_LINES.map((items, i) => <CodeLine key={i} items={items} delay={0.45+i*0.07} />)}
                   </div>
                 </div>
@@ -208,7 +208,7 @@ export default function Home() {
 
       {/* ── Stats bar ─────────────────────────────────────────────── */}
       <section style={{ borderTop:'1px solid var(--border)', borderBottom:'1px solid var(--border)',
-        background:'rgba(8,15,26,0.75)', backdropFilter:'blur(20px)',
+        background:'rgba(255,255,255,0.75)', backdropFilter:'blur(20px)',
         padding:'clamp(24px,4vw,40px) 0', position:'relative', zIndex:1 }}>
         <div className="container">
           <div className="stat-grid">
@@ -218,8 +218,7 @@ export default function Home() {
                 style={{ textAlign:'center', padding:'14px 8px' }}>
                 <Icon size={16} color="var(--primary)" style={{ margin:'0 auto 7px' }} />
                 <div style={{ fontFamily:'var(--font-display)', fontWeight:800, fontSize:'var(--text-2xl)',
-                  background:'linear-gradient(135deg,#ff8c42,var(--text))',
-                  WebkitBackgroundClip:'text', WebkitTextFillColor:'transparent' }}>{value}</div>
+                  color: 'var(--text)' }}>{value}</div>
                 <div style={{ color:'var(--text-muted)', fontSize:'var(--text-xs)',
                   fontFamily:'var(--font-mono)', letterSpacing:'0.05em',
                   textTransform:'uppercase', marginTop:3 }}>{label}</div>

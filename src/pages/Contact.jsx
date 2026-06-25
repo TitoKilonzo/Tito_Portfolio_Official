@@ -34,11 +34,12 @@ function validate({ name, email, message }) {
 
 const FIELD_STYLE = (err) => ({
   width:'100%', padding:'11px 14px',
-  background:'rgba(0,0,0,0.35)',
-  border:`1px solid ${err ? 'var(--danger,#ef4444)' : 'rgba(255,255,255,0.1)'}`,
+  background:'rgba(255,255,255,0.8)',
+  border:`1px solid ${err ? 'var(--danger,#ef4444)' : 'rgba(0,0,0,0.1)'}`,
   borderRadius:'var(--radius-sm)', color:'var(--text)',
   fontFamily:'var(--font-mono)', fontSize:'var(--text-sm)',
   outline:'none', transition:'border-color 0.2s',
+  boxShadow:'inset 0 2px 4px rgba(0,0,0,0.02)'
 })
 
 export default function Contact() {
@@ -164,7 +165,7 @@ export default function Contact() {
                 <div style={{ borderRadius:'var(--radius)', background:'var(--bg-secondary)',
                   border:'1px solid var(--border)', overflow:'hidden', position:'relative' }}>
                   {/* Title bar */}
-                  <div style={{ background:'rgba(0,0,0,0.45)', padding:'11px 16px',
+                  <div style={{ background:'rgba(0,0,0,0.03)', padding:'11px 16px',
                     display:'flex', alignItems:'center', justifyContent:'space-between',
                     borderBottom:'1px solid var(--border)' }}>
                     <div style={{ display:'flex', gap:7 }}>

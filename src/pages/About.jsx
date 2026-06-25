@@ -71,7 +71,7 @@ function Accordion({ item }) {
           <motion.div initial={{ height:0 }} animate={{ height:'auto' }} exit={{ height:0 }}
             style={{ overflow:'hidden' }}>
             <div style={{ padding:'14px clamp(14px,3vw,20px)', display:'flex', flexWrap:'wrap', gap:7,
-              borderTop:`1px solid ${item.color}20`, background:'rgba(0,0,0,0.18)' }}>
+              borderTop:`1px solid ${item.color}20`, background:'rgba(255,255,255,0.4)' }}>
               {item.items.map(s => (
                 <span key={s} style={{ fontFamily:'var(--font-mono)', fontSize:'var(--text-xs)',
                   padding:'4px 11px', borderRadius:99,
