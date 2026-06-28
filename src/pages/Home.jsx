@@ -104,14 +104,6 @@ export default function Home() {
             {/* Left: copy */}
             <div>
 
-              <motion.div initial={{ opacity:0, y:14 }} animate={{ opacity:1, y:0 }} transition={{ delay:0.1 }}>
-                <h3 style={{color: 'var(--primary)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '0.1em', fontSize: 'var(--text-sm)', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer'}} onClick={() => window.location.href='/contact'}>
-                  <span style={{ width:5, height:5, background:'var(--primary)', borderRadius:'50%',
-                    animation:'pulse-glow 2s ease-in-out infinite', display:'inline-block' }} />
-                  Available for Opportunities
-                </h3>
-              </motion.div>
-
               <motion.h1 className="hero-title"
                 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.8 }}
                 style={{
@@ -122,12 +114,12 @@ export default function Home() {
                   marginBottom: 24,
                   letterSpacing: '-0.03em',
                 }}>
-                I engineer <br />
+                Building secure, <br />
                 <span style={{
                   color: 'var(--primary)',
                   position: 'relative', display: 'inline-block'
                 }}>
-                  digital systems.
+                  reliable systems.
                   {/* Animated underline */}
                   <motion.span
                     initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} transition={{ delay: 0.8, duration: 0.8 }}

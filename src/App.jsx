@@ -1,8 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import { ThemeProvider } from './components/ThemeToggle'
-import Preloader from './components/Preloader'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollProgress from './components/ScrollProgress'
@@ -46,11 +45,9 @@ function AppInner() {
 }
 
 export default function App() {
-  const [ready, setReady] = useState(false)
   return (
     <ThemeProvider>
-      <Preloader onDone={() => setReady(true)} />
-      {ready && <AppInner />}
+      <AppInner />
     </ThemeProvider>
   )
 }
