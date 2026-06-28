@@ -8,7 +8,7 @@ registerPaint('circuit-board', class {
   }
 
   paint(ctx, size, props) {
-    const color   = props.get('--circuit-color')   || '#00ff88'
+    const color   = props.get('--circuit-color')   || '#A8748A'
     const opacity = parseFloat(props.get('--circuit-opacity') || 0.08)
     const density = parseInt(props.get('--circuit-density')   || 40)
 

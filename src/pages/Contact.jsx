@@ -13,7 +13,7 @@ const PAGE = {
 const SOCIALS = [
   { href:'https://github.com/TitoKilonzo',       icon:Github,   label:'GitHub',   handle:'@TitoKilonzo',          color:'#f0f6fc' },
   { href:'https://linkedin.com/in/titokinyambu', icon:Linkedin, label:'LinkedIn', handle:'titokinyambu',          color:'#0a66c2' },
-  { href:'mailto:titokilonzo3@gmail.com',        icon:Mail,     label:'Email',    handle:'titokilonzo3@gmail.com', color:'#ff8c42' },
+  { href:'mailto:titokilonzo3@gmail.com',        icon:Mail,     label:'Email',    handle:'titokilonzo3@gmail.com', color:'#A8748A' },
 ]
 
 const CONTACT_INFO = [
@@ -169,7 +169,7 @@ export default function Contact() {
                     display:'flex', alignItems:'center', justifyContent:'space-between',
                     borderBottom:'1px solid var(--border)' }}>
                     <div style={{ display:'flex', gap:7 }}>
-                      {['#ef4444','#f59e0b','#22c55e'].map(c => (
+                      {['#ef4444','#A8748A','#22c55e'].map(c => (
                         <div key={c} style={{ width:10, height:10, borderRadius:'50%', background:c }} />
                       ))}
                     </div>

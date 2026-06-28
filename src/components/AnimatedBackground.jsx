@@ -55,13 +55,13 @@ function useCanvas(canvasRef, variant) {
           x:Math.random()*W, y:Math.random()*H, size:Math.random()*40+16,
           vx:(Math.random()-.5)*.15, vy:(Math.random()-.5)*.15,
           rot:Math.random()*Math.PI*2, vRot:(Math.random()-.5)*.003,
-          a:.06, c:['rgba(255,140,66,','rgba(17,24,39,','rgba(255,179,71,'][Math.floor(Math.random()*3)],
+          a:.06, c:['rgba(168,116,138,','rgba(61,37,48,','rgba(194,138,110,'][Math.floor(Math.random()*3)],
         }))}
       } else if (variant === 'services') {
         state = { t:0, rings:[
-          {r:130,speed:.0006,dots:5, c:'rgba(255,140,66,'},
-          {r:220,speed:.0004,dots:7, c:'rgba(255,140,66,'},
-          {r:320,speed:.0003,dots:10,c:'rgba(255,179,71,'},
+          {r:130,speed:.0006,dots:5, c:'rgba(168,116,138,'},
+          {r:220,speed:.0004,dots:7, c:'rgba(168,116,138,'},
+          {r:320,speed:.0003,dots:10,c:'rgba(194,138,110,'},
         ]}
       } else if (variant === 'contact') {
         state = { nodes: Array.from({ length: 22 }, () => ({
@@ -83,22 +83,22 @@ function useCanvas(canvasRef, variant) {
           if(p.x<0)p.x=W; if(p.x>W)p.x=0
           if(p.y<0)p.y=H; if(p.y>H)p.y=0
           ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2)
-          ctx.fillStyle=`rgba(255,140,66,${p.a})`; ctx.fill()
+          ctx.fillStyle=`rgba(168,116,138,${p.a})`; ctx.fill()
         })
         for(let i=0;i<ps.length;i++) for(let j=i+1;j<ps.length;j++){
           const dx=ps[i].x-ps[j].x, dy=ps[i].y-ps[j].y, d=Math.sqrt(dx*dx+dy*dy)
           if(d<110){
             ctx.beginPath(); ctx.moveTo(ps[i].x,ps[i].y); ctx.lineTo(ps[j].x,ps[j].y)
-            ctx.strokeStyle=`rgba(255,140,66,${.1*(1-d/110)})`
+            ctx.strokeStyle=`rgba(168,116,138,${.1*(1-d/110)})`
             ctx.lineWidth=.5; ctx.stroke()
           }
         }
 
       } else if (variant === 'about') {
         state.t+=.006; ctx.clearRect(0,0,W,H)
-        ;[{amp:50,freq:.004,speed:1,c:'rgba(255,140,66,',ph:0},
-          {amp:34,freq:.006,speed:1.3,c:'rgba(255,179,71,',ph:2},
-          {amp:42,freq:.003,speed:.7,c:'rgba(255,140,66,',ph:4}
+        ;[{amp:50,freq:.004,speed:1,c:'rgba(168,116,138,',ph:0},
+          {amp:34,freq:.006,speed:1.3,c:'rgba(194,138,110,',ph:2},
+          {amp:42,freq:.003,speed:.7,c:'rgba(168,116,138,',ph:4}
         ].forEach(w=>{
           ctx.beginPath()
           for(let x=0;x<=W;x+=4){
@@ -109,8 +109,8 @@ function useCanvas(canvasRef, variant) {
         })
 
       } else if (variant === 'projects') {
-        ctx.fillStyle='rgba(3,7,18,.04)'; ctx.fillRect(0,0,W,H)
-        ctx.fillStyle='rgba(255,140,66,.18)'; ctx.font='12px JetBrains Mono,monospace'
+        ctx.fillStyle='rgba(61,37,48,.05)'; ctx.fillRect(0,0,W,H)
+        ctx.fillStyle='rgba(168,116,138,.18)'; ctx.font='12px JetBrains Mono,monospace'
         const { cols, drops, chars } = state
         for(let i=0;i<cols;i++){
           ctx.fillText(chars[Math.floor(Math.random()*chars.length)], i*22, drops[i]*22)
@@ -159,12 +159,12 @@ function useCanvas(canvasRef, variant) {
             if(d<140){
               ctx.beginPath(); ctx.moveTo(state.nodes[i].x,state.nodes[i].y)
               ctx.lineTo(state.nodes[j].x,state.nodes[j].y)
-              ctx.strokeStyle=`rgba(255,140,66,${.14*(1-d/140)})`; ctx.lineWidth=.7; ctx.stroke()
+              ctx.strokeStyle=`rgba(168,116,138,${.14*(1-d/140)})`; ctx.lineWidth=.7; ctx.stroke()
             }
           }
           const p=(Math.sin(state.nodes[i].pulse)+1)/2
           ctx.beginPath(); ctx.arc(state.nodes[i].x,state.nodes[i].y,1.8+p*1.8,0,Math.PI*2)
-          ctx.fillStyle=`rgba(255,140,66,${.3+p*.35})`; ctx.fill()
+          ctx.fillStyle=`rgba(168,116,138,${.3+p*.35})`; ctx.fill()
         }
       }
 
@@ -193,10 +193,10 @@ function AnimatedBackground({ variant = 'home' }) {
         background:'var(--bg-primary)',
       }} />
 
-      {/* 2 — Subtle Golden Orange Mesh Gradient */}
+      {/* 2 — Subtle Mauve/Terracotta Mesh Gradient */}
       <div style={{
         position:'absolute', inset:0,
-        background:'radial-gradient(ellipse at 10% 0%, rgba(245, 158, 11, 0.04) 0%, transparent 60%), radial-gradient(ellipse at 90% 100%, rgba(249, 115, 22, 0.04) 0%, transparent 60%)',
+        background:'radial-gradient(ellipse at 10% 0%, rgba(168, 116, 138, 0.05) 0%, transparent 60%), radial-gradient(ellipse at 90% 100%, rgba(194, 138, 110, 0.05) 0%, transparent 60%)',
         opacity: 0.9,
       }} />
 

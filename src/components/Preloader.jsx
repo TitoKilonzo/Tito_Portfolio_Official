@@ -55,7 +55,7 @@ export default function Preloader({ onDone }) {
           transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
           style={{
             position: 'fixed', inset: 0, zIndex: 99999,
-            background: '#030712',
+            background: '#2A1820',
             display: 'flex', flexDirection: 'column',
             alignItems: 'center', justifyContent: 'center',
             overflow: 'hidden',
@@ -65,13 +65,13 @@ export default function Preloader({ onDone }) {
           <div style={{
             position: 'absolute', top: '-10%', left: '-10%',
             width: '50vw', height: '50vw',
-            background: 'radial-gradient(circle, rgba(255,140,66,0.06) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(168,116,138,0.10) 0%, transparent 65%)',
             pointerEvents: 'none',
           }} />
           <div style={{
             position: 'absolute', bottom: '-10%', right: '-10%',
             width: '50vw', height: '50vw',
-            background: 'radial-gradient(circle, rgba(255,179,71,0.05) 0%, transparent 65%)',
+            background: 'radial-gradient(circle, rgba(194,138,110,0.08) 0%, transparent 65%)',
             pointerEvents: 'none',
           }} />
 
@@ -83,7 +83,7 @@ export default function Preloader({ onDone }) {
             style={{
               position: 'absolute', left: 0, right: 0,
               height: 2,
-              background: 'linear-gradient(90deg, transparent, rgba(255,140,66,0.6), transparent)',
+              background: 'linear-gradient(90deg, transparent, rgba(168,116,138,0.6), transparent)',
               pointerEvents: 'none',
             }}
           />
@@ -109,19 +109,19 @@ export default function Preloader({ onDone }) {
                 style={{
                   position: 'absolute', inset: -3,
                   borderRadius: 20,
-                  background: 'conic-gradient(from 0deg, #ff8c42, #ff6b35, #ffffff, #ff8c42)',
+                  background: 'conic-gradient(from 0deg, #C28A6E, #A8748A, #ffffff, #C28A6E)',
                   filter: 'blur(2px)',
                 }}
               />
               <div style={{
                 position: 'absolute', inset: 0,
                 borderRadius: 18,
-                background: '#030712',
+                background: '#2A1820',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
               }}>
                 <span style={{
                   fontFamily: "'JetBrains Mono', monospace",
-                  fontWeight: 800, fontSize: 28, color: '#ff8c42',
+                  fontWeight: 800, fontSize: 28, color: '#D9A8BC',
                   letterSpacing: '-0.02em',
                 }}>TK</span>
               </div>
@@ -138,7 +138,7 @@ export default function Preloader({ onDone }) {
                   fontWeight: 800,
                   fontSize: 'clamp(1.8rem, 5vw, 3rem)',
                   letterSpacing: '0.08em',
-                  color: '#e2e8f0',
+                  color: '#F5E6EC',
                   lineHeight: 1,
                 }}
               >
@@ -153,7 +153,7 @@ export default function Preloader({ onDone }) {
                   fontWeight: 400,
                   fontSize: 'clamp(1rem, 3vw, 1.6rem)',
                   letterSpacing: '0.22em',
-                  color: '#ff8c42',
+                  color: '#D9A8BC',
                   marginTop: 4,
                 }}
               >
@@ -177,8 +177,8 @@ export default function Preloader({ onDone }) {
                   style={{
                     padding: '4px 12px',
                     borderRadius: 99,
-                    border: `1px solid ${['rgba(255,140,66,0.25)', 'var(--border)', 'rgba(255,179,71,0.25)'][i]}`,
-                    color: ['#ff8c42', 'var(--text)', '#ffb347'][i],
+                    border: `1px solid ${['rgba(168,116,138,0.30)', 'rgba(245,230,236,0.18)', 'rgba(194,138,110,0.30)'][i]}`,
+                    color: ['#D9A8BC', '#F5E6EC', '#E8B89E'][i],
                     fontFamily: "'JetBrains Mono', monospace",
                     fontSize: '0.65rem',
                     letterSpacing: '0.08em',
@@ -209,7 +209,7 @@ export default function Preloader({ onDone }) {
               }
               style={{
                 height: '100%', originX: 0,
-                background: 'linear-gradient(90deg, #ff8c42, var(--text))',
+                background: 'linear-gradient(90deg, #C28A6E, #F5E6EC)',
               }}
             />
           </motion.div>
@@ -220,7 +220,7 @@ export default function Preloader({ onDone }) {
             style={{
               position: 'absolute', bottom: 20,
               fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '0.6rem', color: '#64748b',
+              fontSize: '0.6rem', color: '#C9A3B2',
               letterSpacing: '0.15em',
             }}
           >

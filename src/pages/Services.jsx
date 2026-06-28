@@ -16,7 +16,7 @@ const SERVICES = [
     id: 'web',
     icon: Globe,
     label: 'Web App Development',
-    color: '#ff8c42',
+    color: '#A8748A',
     tagline: 'Full-stack web applications built for scale and security',
     sub: [
       {
@@ -45,7 +45,7 @@ const SERVICES = [
     id: 'cyber',
     icon: Shield,
     label: 'Cybersecurity',
-    color: '#ff6b35',
+    color: '#C28A6E',
     tagline: 'Protect your systems, data, and digital footprint',
     sub: [
       {
@@ -69,7 +69,7 @@ const SERVICES = [
     id: 'it',
     icon: Monitor,
     label: 'IT Support',
-    color: '#ffb347',
+    color: '#C9A0AE',
     tagline: 'Reliable on-site and remote IT support for organizations',
     sub: [
       {
@@ -93,7 +93,7 @@ const SERVICES = [
     id: 'data',
     icon: BarChart2,
     label: 'Data Analysis',
-    color: '#ff7f32',
+    color: '#B8866F',
     tagline: 'Turn raw data into decisions with Python-powered analytics',
     sub: [
       {
@@ -117,7 +117,7 @@ const SERVICES = [
     id: 'design',
     icon: Palette,
     label: 'Graphics Design / UI·UX',
-    color: '#ffa03b',
+    color: '#BD8C76',
     tagline: 'Visually compelling design that communicates and converts',
     sub: [
       {
@@ -141,7 +141,7 @@ const SERVICES = [
     id: 'hosting',
     icon: Server,
     label: 'Hosting & Deployment',
-    color: '#ff6b35',
+    color: '#C28A6E',
     tagline: 'Get your product live, fast and reliably',
     sub: [
       {

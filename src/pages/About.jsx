@@ -12,19 +12,19 @@ const PAGE = {
 }
 
 const TECH_STACK = [
-  { cat:'Languages',                 color:'#ff8c42', items:['Python','JavaScript','TypeScript','SQL','Bash','HTML5','CSS3','Java (Android)'] },
-  { cat:'Frameworks & Libraries',    color:'#ff6b35', items:['Django','React','Node.js','Express.js','Vite','Framer Motion','Pandas','Scikit-learn'] },
-  { cat:'Databases & Storage',       color:'#ffb347', items:['PostgreSQL','MySQL','SQLite','MongoDB Atlas','Supabase','Appwrite','Firebase','Redis'] },
-  { cat:'Cybersecurity',             color:'#ff8c42', items:['Vulnerability Assessment','Penetration Testing','SIEM','Incident Response','Active Directory','Network Hardening','OWASP'] },
-  { cat:'Networking & Infra',        color:'#ffa03b', items:['Fiber Optic (FTTH/FTTB)','OTDR Testing','Fusion Splicing','ONT Config','TCP/IP','DNS/DHCP','VPN','Cisco'] },
-  { cat:'Tools & DevOps',            color:'#ff7f32', items:['Git','GitHub Actions','CI/CD','Docker','Linux','VS Code','Postman','Figma'] },
+  { cat:'Languages',                 color:'#A8748A', items:['Python','JavaScript','TypeScript','SQL','Bash','HTML5','CSS3','Java (Android)'] },
+  { cat:'Frameworks & Libraries',    color:'#C28A6E', items:['Django','React','Node.js','Express.js','Vite','Framer Motion','Pandas','Scikit-learn'] },
+  { cat:'Databases & Storage',       color:'#C9A0AE', items:['PostgreSQL','MySQL','SQLite','MongoDB Atlas','Supabase','Appwrite','Firebase','Redis'] },
+  { cat:'Cybersecurity',             color:'#A8748A', items:['Vulnerability Assessment','Penetration Testing','SIEM','Incident Response','Active Directory','Network Hardening','OWASP'] },
+  { cat:'Networking & Infra',        color:'#BD8C76', items:['Fiber Optic (FTTH/FTTB)','OTDR Testing','Fusion Splicing','ONT Config','TCP/IP','DNS/DHCP','VPN','Cisco'] },
+  { cat:'Tools & DevOps',            color:'#B8866F', items:['Git','GitHub Actions','CI/CD','Docker','Linux','VS Code','Postman','Figma'] },
 ]
 
 const EXPERIENCE = [
   {
     role:'Back-End Developer (Intern)', company:'Current Employer', period:'Feb 2026 – Present',
     highlights:['Developed scalable RESTful APIs serving 1,000+ concurrent users','Reduced DB response time ~35% via indexing & query refactoring','Integrated 5+ payment gateways with zero-downtime deployments'],
-    icon:Briefcase, color:'#ff8c42',
+    icon:Briefcase, color:'#A8748A',
   },
   {
     role:'ICT Assistant & Trainer', company:'AIC Kanzinwa CDC', period:'May 2025 – Jan 2026',
@@ -34,12 +34,12 @@ const EXPERIENCE = [
   {
     role:'IT Support & Consultant', company:'Hatikvah Communication & Engineering', period:'Feb 2025 – May 2025',
     highlights:['Led fiber optic FTTH/FTTB deployments across 4+ regional sites','Configured ONTs for 100+ customer premises with OTDR testing','Delivered network security hardening and infrastructure optimization'],
-    icon:Briefcase, color:'#ffb347',
+    icon:Briefcase, color:'#C9A0AE',
   },
   {
     role:'IT Support (Volunteer)', company:'AIC Kanzinwa Child & Youth Dev.', period:'Aug 2023 – Jan 2024',
     highlights:['Resolved 100+ incidents using structured troubleshooting','Trained 20+ staff on newly deployed software','Developed SOPs and knowledge-base articles'],
-    icon:User, color:'#f59e0b',
+    icon:User, color:'#A8748A',
   },
 ]
 
@@ -118,7 +118,7 @@ function FlipCard() {
             ) : (
               <>
                 <div style={{ width:40, height:40, borderRadius:'50%',
-                  background:'conic-gradient(from var(--angle,0deg),#ff8c42,var(--text),#ffb347,#ff8c42)',
+                  background:'conic-gradient(from var(--angle,0deg),#A8748A,var(--text),#C9A0AE,#A8748A)',
                   animation:'conic-spin 4s linear infinite',
                   display:'flex', alignItems:'center', justifyContent:'center' }}>
                   <User size={18} color="#000" />

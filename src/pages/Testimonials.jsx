@@ -8,7 +8,7 @@ const TESTIMONIALS = [
     role: 'Chief Technology Officer',
     org: 'MemeyAI Group · Nairobi',
     text: 'Tito joined our backend team and hit the ground running. He built RESTful APIs now serving over 1,000 concurrent users, cut average API response time by ~35% through targeted indexing and query refactoring, and integrated five payment gateways without a single downtime incident. He also reduced our bug backlog by ~40% through systematic debugging. The kind of engineer who ships and documents.',
-    color: '#ff8c42',
+    color: '#A8748A',
     initials: 'AW',
     period: 'Feb 2026 – Present',
   },
@@ -26,7 +26,7 @@ const TESTIMONIALS = [
     role: 'Project Manager',
     org: 'Hatikvah Communication & General Engineering Ltd · Ruiru',
     text: 'Tito led our FTTH and FTTB fiber optic deployments across four regional sites, configured over 100 CPE and ONT devices, and performed OTDR testing and precision fusion splicing — every site delivered on schedule. He also handled network security hardening and designed software solutions that improved our operational efficiency. A field engineer who understands both the cable and the code.',
-    color: '#ffb347',
+    color: '#C9A0AE',
     initials: 'SC',
     period: 'Feb 2025 – May 2025',
   },
@@ -34,10 +34,10 @@ const TESTIMONIALS = [
 
 // Stats sourced directly from CV — keep in sync with your CV bullet points
 const STATS = [
-  { label: 'Concurrent Users',  value: '1k+',   color: '#ff8c42' },
+  { label: 'Concurrent Users',  value: '1k+',   color: '#A8748A' },
   { label: 'Staff Trained',     value: '30+',   color: 'var(--text)' },
-  { label: 'Sites Deployed',    value: '4+',    color: '#ffb347' },
-  { label: 'API Uptime',        value: '99.9%', color: '#f59e0b' },
+  { label: 'Sites Deployed',    value: '4+',    color: '#C9A0AE' },
+  { label: 'API Uptime',        value: '99.9%', color: '#A8748A' },
 ]
 
 function TestimonialCard({ t, isActive, onClick, index }) {
@@ -98,7 +98,7 @@ function TestimonialCard({ t, isActive, onClick, index }) {
             <div style={{
               fontFamily: 'var(--font-display)', fontWeight: 700,
               fontSize: isActive ? 'var(--text-sm)' : 'var(--text-xs)',
-              color: '#e2e8f0',
+              color: 'var(--text)',
               transition: 'font-size 0.3s ease',
             }}>
               {t.name}
@@ -246,7 +246,7 @@ export default function Testimonials() {
             }}>
               What People{' '}
               <span style={{
-                background: 'linear-gradient(135deg, #ff8c42, #ffffff)',
+                background: 'linear-gradient(135deg, #A8748A, #ffffff)',
                 WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
               }}>
                 Actually Say

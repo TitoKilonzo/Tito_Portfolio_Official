@@ -185,7 +185,7 @@ export default function Home() {
                     display:'flex', alignItems:'center', justifyContent:'space-between',
                     borderBottom:'1px solid rgba(255,255,255,0.1)' }}>
                     <div style={{ display:'flex', gap:7 }}>
-                      {['#ef4444','#f59e0b','#22c55e'].map(c => (
+                      {['#ef4444','#A8748A','#22c55e'].map(c => (
                         <div key={c} style={{ width:10, height:10, borderRadius:'50%', background:c }} />
                       ))}
                     </div>
